@@ -20,3 +20,6 @@ Route::get('/visi-misi-tujuan', [LandingController::class, 'visiMisi']);
 Route::get('/struktur-organisasi', [LandingController::class, 'strukturOrganisasi']);
 Route::get('/tugas-dan-fungsi', [LandingController::class, 'tugasFungsi']);
 Route::get('/rencana-strategis', [LandingController::class, 'rencanaStrategis']);
+
+Route::get('/berita', [LandingController::class, 'berita']);
+Route::get('/berita/detail/{id}', [LandingController::class, 'beritaDetail']);

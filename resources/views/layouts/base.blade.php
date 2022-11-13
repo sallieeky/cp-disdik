@@ -287,12 +287,12 @@
                                                     <div class="dropdown__content col-lg-2 col-md-4">
                                                         <ul class="menu-vertical">
                                                             <li class="">
-                                                                <a href="#">
+                                                                <a href="/berita">
                                                                     Berita
                                                                 </a>
                                                             </li>
                                                             <li class="">
-                                                                <a href="#">
+                                                                <a href="/pengumuman">
                                                                     Pengumuman
                                                                 </a>
                                                             </li>

@@ -30,4 +30,13 @@ class LandingController extends Controller
     {
         return view('tugas-dan-fungsi');
     }
+
+    public function berita()
+    {
+        return view("berita");
+    }
+    public function beritaDetail($id)
+    {
+        return view("berita-detail");
+    }
 }
