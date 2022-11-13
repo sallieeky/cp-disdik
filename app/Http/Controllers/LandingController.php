@@ -54,8 +54,13 @@ class LandingController extends Controller
         return view("regulasi");
     }
 
-    public function penjelasanPPID()
+    public function ppid()
     {
         return view("penjelasan-ppid");
+    }
+
+    public function penghargaan()
+    {
+        return view("penghargaan");
     }
 }

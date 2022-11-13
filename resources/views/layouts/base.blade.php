@@ -350,6 +350,9 @@
                                         <!--end dropdown container-->
                                     </li> --}}
                                     <li class="dropdown">
+                                        <a href="/ppid">PPID</a>
+                                    </li>
+                                    {{-- <li class="dropdown">
                                         <span class="dropdown__trigger">PPID</span>
                                         <div class="dropdown__container">
                                             <div class="container">
@@ -374,7 +377,7 @@
                                             </div>
                                         </div>
                                         <!--end dropdown container-->
-                                    </li>
+                                    </li> --}}
                                     <li class="dropdown">
                                         <span class="dropdown__trigger">Anggaran</span>
                                         <div class="dropdown__container">
@@ -402,7 +405,7 @@
                                         <!--end dropdown container-->
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">Penghargaan</a>
+                                        <a href="/penghargaan">Penghargaan</a>
                                     </li>
                                 </ul>
                             </div>

@@ -29,4 +29,5 @@ Route::get('/pengumuman/detail/{id}', [LandingController::class, 'pengumumanDeta
 
 Route::get('/regulasi', [LandingController::class, 'regulasi']);
 
-Route::get('/penjelasan-ppid', [LandingController::class, 'penjelasanPPID']);
+Route::get('/ppid', [LandingController::class, 'ppid']);
+Route::get('/penghargaan', [LandingController::class, 'penghargaan']);
