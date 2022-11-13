@@ -25,4 +25,9 @@ class LandingController extends Controller
     {
         return view('struktur-organisasi');
     }
+
+    public function tugasFungsi()
+    {
+        return view('tugas-dan-fungsi');
+    }
 }

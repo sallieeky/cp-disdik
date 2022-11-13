@@ -261,7 +261,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="">
-                                                                <a href="#">
+                                                                <a href="/tugas-dan-fungsi">
                                                                     Tugas dan Fungsi
                                                                 </a>
                                                             </li>
