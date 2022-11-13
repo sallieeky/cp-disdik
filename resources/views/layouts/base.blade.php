@@ -251,7 +251,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="">
-                                                                <a href="#">
+                                                                <a href="/visi-misi-tujuan">
                                                                     Visi, Misi, dan Tujuan
                                                                 </a>
                                                             </li>

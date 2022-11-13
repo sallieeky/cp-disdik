@@ -1,6 +1,7 @@
 @extends('layouts.base')
-@section('title', 'Profil')
+@section('title', 'Visi, Misi, dan Tujuan')
 @section('content')
+    {{-- HEADER --}}
     <section class="cover height-30 imagebg" id="home" style="
             background-blend-mode: multiply;
             background-image: url(/img/beranda-hero.jpg);
@@ -11,7 +12,7 @@
     ">
         <div class="container pos-vertical-center">
             <p style="font-weight: 600; font-size: 2.3em">
-                Profil Dinas Pendidikan Kota Balikpapan
+                Visi Misi dan Tujuan Dinas Pendidikan Kota Balikpapan
             </p>
         </div>
         <!--end of container-->
@@ -29,55 +30,46 @@
         </div>
         <!--end of container-->
     </section>
+    {{-- END HEADER --}}
+
     <section class="py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <p>
-                        Profil Pendidikan Kota Balikpapan merupakan suatu model dalam menyusun profil pendidikan yang memberikan informasi tentang statistik pendidikan di Kota Balikpapan secara umum. Profil ini mencakup berbagai jenjang, jenis dan jalur pendidikan yang meliputi antara lain jumlah sekolah, tenaga pendidik dan kependidikan, peserta didik, sumber pembiayaan, angka partisipasi sekolah, angka mengulang, angka melanjutkan, jumlah putus sekolah, tahun siswa terbuang, jumlah keluaran dan masih banyak lagi.
-    
-                    </p>
-                    <p>
-                        Data yang digunakan untuk menyusun profil pendidikan ini terdiri data tahunan yang berasal dari Bagian Pengembangan Data dan Jaringan Kependidikan (PDJK) Dinas Pendidikan Kota Balikpapan, Badan Pusat Statistik Kota Balikpapan dan Dinas Kependudukan dan Catatan Sipil Kota Balikpapan. 
-                    </p>
-                    <p>
-                        Profil Pendidikan Kota Balikpapan diupdate setiap tahun. Data beberapa tahun terakhir dapat dilihat pada dokumen-dokumen di bawah ini.
-                    </p>
-                </div>
-                
-                <div class="col-md-12 mt-5">
-                    <h5 class="p-0 m-0">Riwayat Profil</h5>
-                    <table class="border--round table--alternate-row table-sm">
-                        <thead>
-                            <tr>
-                                <th width="50%">Nama</th>
-                                <th>Tanggal</th>
-                                <th>Size</th>
-                                <th>Download</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><i class="fa-solid fa-file-zipper"></i> Profile 2010</td>
-                                <td>2010-10-10</td>
-                                <td>300 kb</td>
-                                <td align="center"><a href="#"><i class="fa-solid fa-file-arrow-down" style="font-size: 2em"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+              <div class="col-md-12">
+                <img alt="Image" class="image" src="/storage/visimisitujuan/visi_misi.jpg" />
+              </div>
+
+              <div class="col-md-12 mt-5 text-justify">
+                <h4>Tujuan dan Sasaran jangka menengah Dinas Pendidikan dan Kebudayaan :</h4>
+                <p class="type--uppercase type--bold">Misi - 1 <br> MENINGKATKAN SUMBER DAYA MANUSIA YANG BERKUALITAS DAN BERDAYA SAING TINGGI</p>
+                <p><span class="type--bold">Tujuan</span><br> Mewujudkan Sumber Daya Manusia yang cerdas intelektual, cerdas emosional, cerdas spiritual dan berdaya saing</p>
+                <span class="type--bold">Sasaran</span>
+                  <ol style="padding-left: 1.8em">
+                    <li style="margin:0">Meningkatnya kualitas pendidikan</li>
+                    <li style="margin:0">Meningkatkan kualitas hidup dan kesejahteraan masyarakat secara menyeluruh dan berkelanjutan</li>
+                    <li style="margin:0">Meningkatkan kenyamanan keamanan dan ketertiban lingkungan</li>
+                  </ol>
+                <span class="type--bold">Arah Kebijakan</span>
+                  <ol style="padding-left: 1.8em">
+                    <li style="margin:0">Peningkatan Kualitas Pendidikan Non Formal Berbasis IPTEK dan Berlandaskan IMTAQ</li>
+                    <li style="margin:0">Perluasaan subsidi pendidikan bagi seluruh peserta didik usia sekolah.</li>
+                    <li style="margin:0">Peningkatan kualitas dan kuantitas Tenaga Pendidik serta Tenaga Kependidikan.</li>
+                    <li style="margin:0">Perluasan program penanggulangan kemiskinan</li>
+                    <li style="margin:0">Meningkatnya prestasi dan pelestarian kebudayaan daerah</li>
+                    <li style="margin:0">Meningkatkan pelestarian cagar budaya</li>
+                  </ol>
+                <span class="type--bold">Program Pembangunan</span>
+                  <ol style="padding-left: 1.8em">
+                    <li style="margin:0">Program Pendidikan Non Formal</li>
+                    <li style="margin:0">Program Pendidikan Anak Usia Dini</li>
+                    <li style="margin:0">Program Pendidikan Dasar</li>
+                    <li style="margin:0">Program Pendidikan Menengah</li>
+                    <li style="margin:0">Program Peningkatan Mutu Pendidik Dan Tenaga Kependidikan</li>
+                    <li style="margin:0">Program Penanggulangan Kemiskinan Terpadu</li>
+                    <li style="margin:0">Program Penggelolaan Keanekaragaman Budaya</li>
+                    <li style="margin:0">Program Pelestarian Cagar Budaya</li>
+                  </ol>
+              </div>
             </div>
         </div>
         <!--end of container-->
@@ -144,4 +136,5 @@
         </div>
         <!--end of container-->
     </section>
+    {{-- END FOOTER --}}
 @endsection

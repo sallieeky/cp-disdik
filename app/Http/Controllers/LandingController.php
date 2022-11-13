@@ -15,4 +15,9 @@ class LandingController extends Controller
     {
         return view("profil");
     }
+
+    public function visiMisi()
+    {
+        return view("visi-misi-tujuan");
+    }
 }
