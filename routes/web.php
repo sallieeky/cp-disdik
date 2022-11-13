@@ -23,3 +23,6 @@ Route::get('/rencana-strategis', [LandingController::class, 'rencanaStrategis'])
 
 Route::get('/berita', [LandingController::class, 'berita']);
 Route::get('/berita/detail/{id}', [LandingController::class, 'beritaDetail']);
+
+Route::get('/pengumuman', [LandingController::class, 'pengumuman']);
+Route::get('/pengumuman/detail/{id}', [LandingController::class, 'pengumumanDetail']);

@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title', 'Berita')
+@section('title', 'Pengumuman')
 @section('content')
   
     {{-- HEADER --}}
@@ -13,7 +13,7 @@
     ">
         <div class="container pos-vertical-center">
             <p style="font-weight: 600; font-size: 2.3em">
-                Berita Dinas Pendidikan Kota Balikpapan
+                Pengumuman Dinas Pendidikan Kota Balikpapan
             </p>
         </div>
         <!--end of container-->

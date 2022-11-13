@@ -39,4 +39,13 @@ class LandingController extends Controller
     {
         return view("berita-detail");
     }
+
+    public function pengumuman()
+    {
+        return view("pengumuman");
+    }
+    public function pengumumanDetail($id)
+    {
+        return view("pengumuman-detail");
+    }
 }

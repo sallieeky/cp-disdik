@@ -40,7 +40,6 @@
               <div class="col-md-12 col-lg-8">
                   <div class="masonry">
                       <div class="masonry__container row">
-                          <div class="masonry__item col-md-6"></div>
                           <div class="masonry__item col-md-6" data-masonry-filter="Marketing">
                               <article class="feature feature-1">
                                   <a href="/berita/detail/1" class="block">

@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('title', 'Berita')
+@section('title', 'Pengumuman')
 @section('content')
   
     {{-- HEADER --}}
@@ -13,7 +13,7 @@
     ">
         <div class="container pos-vertical-center">
             <p style="font-weight: 600; font-size: 2.3em">
-                Berita Dinas Pendidikan Kota Balikpapan
+                Pengumuman Dinas Pendidikan Kota Balikpapan
             </p>
         </div>
         <!--end of container-->
@@ -40,117 +40,53 @@
               <div class="col-md-12 col-lg-8">
                   <div class="masonry">
                       <div class="masonry__container row">
-                          <div class="masonry__item col-md-6"></div>
-                          <div class="masonry__item col-md-6" data-masonry-filter="Marketing">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-2.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>A day in the life of a professional fitness blogger</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Marketing">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-3.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Small businesses that expertly leverage their online followings</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Design">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-4.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Designing efficiently in the age of distraction</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Inspiration">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-5.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Assembling an attractive workspace for creativity</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Inspiration">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-6.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Our Favourite Things Q1 2016</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Design">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-1.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Stack designer Marc Ruben offers freelancing advice</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                      </div>
-                      <!--end of masonry container-->
-                      <div class="pagination">
-                          <a class="pagination__prev" href="#" title="Previous Page">&laquo;</a>
-                          <ol>
-                              <li>
-                                  <a href="#">1</a>
-                              </li>
-                              <li>
-                                  <a href="#">2</a>
-                              </li>
-                              <li class="pagination__current">3</li>
-                              <li>
-                                  <a href="#">4</a>
-                              </li>
-                          </ol>
-                          <a class="pagination__next" href="#" title="Next Page">&raquo;</a>
+                        <div class="masonry__item col-md-12">
+                            @for ($i=1; $i<=5; $i++)
+                            <section class="space--xs blog-article-wide">
+                                <div class="container">
+                                    <div class="row cta cta--horizontal text-center-xs">
+                                        <div class="col-md-4">
+                                            <h4>24th February 2017</h4>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p class="lead">
+                                                Building an enduring online audience
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3 text-right text-center-xs">
+                                            <a class="btn type--uppercase" href="/pengumuman/detail/1">
+                                                <span class="btn__text">
+                                                    Read Article
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!--end of row-->
+                                </div>
+                                <!--end of container-->
+                            </section>
+                            @endfor
+                            <div class="pagination">
+                              <a class="pagination__prev" href="#" title="Previous Page">&laquo;</a>
+                              <ol>
+                                  <li>
+                                      <a href="#">1</a>
+                                  </li>
+                                  <li>
+                                      <a href="#">2</a>
+                                  </li>
+                                  <li class="pagination__current">3</li>
+                                  <li>
+                                      <a href="#">4</a>
+                                  </li>
+                              </ol>
+                              <a class="pagination__next" href="#" title="Next Page">&raquo;</a>
+                            </div>
+                        </div>
                       </div>
                   </div>
                   <!--end masonry-->
+                  
               </div>
               <div class="col-lg-4 hidden-sm">
                   <div class="mt-3 sidebar boxed boxed--border boxed--lg bg--secondary">
