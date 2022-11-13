@@ -26,3 +26,7 @@ Route::get('/berita/detail/{id}', [LandingController::class, 'beritaDetail']);
 
 Route::get('/pengumuman', [LandingController::class, 'pengumuman']);
 Route::get('/pengumuman/detail/{id}', [LandingController::class, 'pengumumanDetail']);
+
+Route::get('/regulasi', [LandingController::class, 'regulasi']);
+
+Route::get('/penjelasan-ppid', [LandingController::class, 'penjelasanPPID']);

@@ -48,4 +48,14 @@ class LandingController extends Controller
     {
         return view("pengumuman-detail");
     }
+
+    public function regulasi()
+    {
+        return view("regulasi");
+    }
+
+    public function penjelasanPPID()
+    {
+        return view("penjelasan-ppid");
+    }
 }

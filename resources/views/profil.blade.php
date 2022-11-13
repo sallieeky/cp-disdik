@@ -88,7 +88,7 @@
     </section>
 
     {{-- FOOTER --}}
-    <section class="elements-title space--xxs text-center">
+    {{-- <section class="elements-title space--xxs text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -147,6 +147,6 @@
             <!--end of row-->
         </div>
         <!--end of container-->
-    </section>
+    </section> --}}
     {{-- END FOOTER --}}
 @endsection

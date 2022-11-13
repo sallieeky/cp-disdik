@@ -306,6 +306,9 @@
                                         <!--end dropdown container-->
                                     </li>
                                     <li class="dropdown">
+                                        <a href="/regulasi">Regulasi</a>
+                                    </li>
+                                    {{-- <li class="dropdown">
                                         <span class="dropdown__trigger">Regulasi</span>
                                         <div class="dropdown__container">
                                             <div class="container">
@@ -345,7 +348,7 @@
                                             </div>
                                         </div>
                                         <!--end dropdown container-->
-                                    </li>
+                                    </li> --}}
                                     <li class="dropdown">
                                         <span class="dropdown__trigger">PPID</span>
                                         <div class="dropdown__container">
@@ -354,7 +357,7 @@
                                                     <div class="dropdown__content col-lg-2 col-md-4">
                                                         <ul class="menu-vertical">
                                                             <li class="">
-                                                                <a href="#">
+                                                                <a href="/penjelasan-ppid">
                                                                     Penjelasan PPID
                                                                 </a>
                                                             </li>
@@ -428,6 +431,69 @@
         <div class="main-container">
 
             @yield('content')
+
+            {{-- FOOTER --}}
+            <section class="elements-title space--xxs text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6 class="type--uppercase">INFO LINK</h6>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="slider slider--inline-arrows slider--arrows-hover text-center">
+                                <ul class="slides">
+                                    <li class="col-md-3 col-6">
+                                        <a href="#">
+                                            <img alt="Image" class="image--md" src="/img/info-link/BOS_Sekolah.jpg" />
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3 col-6">
+                                        <a href="#">
+                                            <img alt="Image" class="image--md" src="/img/info-link/DATA.jpg" />
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3 col-6">
+                                        <a href="#">
+                                            <img alt="Image" class="image--md" src="/img/info-link/INFO_KUIS_KIHAJAR.jpg" />
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3 col-6">
+                                        <a href="#">
+                                            <img alt="Image" class="image--md" src="/img/info-link/LHKPN.png" />
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3 col-6">
+                                        <a href="#">
+                                            <img alt="Image" class="image--md" src="/img/info-link/ppdb20201.jpg" />
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3 col-6">
+                                        <a href="#">
+                                            <img alt="Image" class="image--md" src="/img/info-link/SIRUP2.png" />
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3 col-6">
+                                        <a href="#">
+                                            <img alt="Image" class="image--md" src="/img/info-link/sp4nLapor.jpg" />
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3 col-6">
+                                        <a href="#">
+                                            <img alt="Image" class="image--md" src="/img/info-link/whistle_blower.jpg" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            {{-- END FOOTER --}}
 
             <footer class="footer-6 unpad--bottom  bg--dark ">
                 <div class="container">
