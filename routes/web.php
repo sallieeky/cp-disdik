@@ -15,3 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingController::class, 'beranda']);
+Route::get('/profil', [LandingController::class, 'profil']);
+Route::get('/visi-misi-tujuan', [LandingController::class, 'visiMisi']);
+Route::get('/struktur-organisasi', [LandingController::class, 'strukturOrganisasi']);
+Route::get('/tugas-dan-fungsi', [LandingController::class, 'tugasFungsi']);
+Route::get('/rencana-strategis', [LandingController::class, 'rencanaStrategis']);

@@ -10,4 +10,9 @@ class LandingController extends Controller
     {
         return view("beranda");
     }
+
+    public function profil()
+    {
+        return view("profil");
+    }
 }
