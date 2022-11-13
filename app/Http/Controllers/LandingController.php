@@ -20,4 +20,9 @@ class LandingController extends Controller
     {
         return view("visi-misi-tujuan");
     }
+
+    public function strukturOrganisasi()
+    {
+        return view('struktur-organisasi');
+    }
 }

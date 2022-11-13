@@ -256,7 +256,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="">
-                                                                <a href="#">
+                                                                <a href="/struktur-organisasi">
                                                                     Struktur Organisasi
                                                                 </a>
                                                             </li>

@@ -1,7 +1,7 @@
 @extends('layouts.base')
-@section('title', 'Profil')
+@section('title', 'Struktur Organisasi')
 @section('content')
-    
+  
     {{-- HEADER --}}
     <section class="cover height-30 imagebg" id="home" style="
             background-blend-mode: multiply;
@@ -13,7 +13,7 @@
     ">
         <div class="container pos-vertical-center">
             <p style="font-weight: 600; font-size: 2.3em">
-                Profil Dinas Pendidikan Kota Balikpapan
+                Struktur Organisasi Dinas Pendidikan Kota Balikpapan
             </p>
         </div>
         <!--end of container-->
@@ -35,54 +35,26 @@
 
     <section class="py-3">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>
-                        Profil Pendidikan Kota Balikpapan merupakan suatu model dalam menyusun profil pendidikan yang memberikan informasi tentang statistik pendidikan di Kota Balikpapan secara umum. Profil ini mencakup berbagai jenjang, jenis dan jalur pendidikan yang meliputi antara lain jumlah sekolah, tenaga pendidik dan kependidikan, peserta didik, sumber pembiayaan, angka partisipasi sekolah, angka mengulang, angka melanjutkan, jumlah putus sekolah, tahun siswa terbuang, jumlah keluaran dan masih banyak lagi.
-    
-                    </p>
-                    <p>
-                        Data yang digunakan untuk menyusun profil pendidikan ini terdiri data tahunan yang berasal dari Bagian Pengembangan Data dan Jaringan Kependidikan (PDJK) Dinas Pendidikan Kota Balikpapan, Badan Pusat Statistik Kota Balikpapan dan Dinas Kependudukan dan Catatan Sipil Kota Balikpapan. 
-                    </p>
-                    <p>
-                        Profil Pendidikan Kota Balikpapan diupdate setiap tahun. Data beberapa tahun terakhir dapat dilihat pada dokumen-dokumen di bawah ini.
-                    </p>
-                </div>
-                
-                <div class="col-md-12 mt-5">
-                    <h5 class="p-0 m-0">Riwayat Profil</h5>
-                    <table class="border--round table--alternate-row table-sm">
-                        <thead>
-                            <tr>
-                                <th width="50%">Nama</th>
-                                <th>Tanggal</th>
-                                <th>Size</th>
-                                <th>Download</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><i class="fa-solid fa-file-zipper"></i> Profile 2010</td>
-                                <td>2010-10-10</td>
-                                <td>300 kb</td>
-                                <td align="center"><a href="#"><i class="fa-solid fa-file-arrow-down" style="font-size: 2em"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+          <div class="row">
+            <div class="col-md-12">
+              <img alt="Image" class="image" src="/storage/strukturorganisasi/Struktur2017.jpg" />
             </div>
+            <div class="col-md-12 mt-5 text-justify">
+              <p>Untuk menyelenggarakan tugas tersebut, <span class="type--bold">Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>  mempunyai fungsi :</p>
+              <ol style="padding-left: 1.8em; list-style:lower-alpha">
+                <li style="margin:0">perumusan kebijakan, penyusunan program dan kegiatan urusan di bidang pendidikan dan kebudayaan;</li>
+                <li style="margin:0">penyusunan rencana pembiayaan penyelenggaraan pembelajaran, kurikulum, prasarana dan sarana, pembinaan dan pengembangan guru dan tenaga kependidikan;</li>
+                <li style="margin:0">penyelenggaraan pengawasan, pengendalian, evaluasi pembelajaran pendidikan formal, non formal dan informal, PAUD dan Pendidikan masyarakat;</li>
+                <li style="margin:0">pelaksanaan pembinaan dan pengendalian pengelolaan sarana prasarana pendidikan dan kebudayaan;</li>
+                <li style="margin:0">penyelenggaraan pemantauan, pengendalian dan analisa kelayakan kurikulum, prasarana dan sarana serta mutu pendidikan;</li>
+                <li style="margin:0">pelaksanaan evaluasi pencapaian standar nasional Pendidikan pada pendidikan formal, non formal dan informal, PAUD dan pendidikan masyarakat;</li>
+                <li style="margin:0">penyelenggaraan layanan perizinan/rekomendasi/surat keterangan di bidang pendidikan dan di bidang kebudayaan;</li>
+                <li style="margin:0">pelaksanaan kebijakan pembiayaan, kurikulum, dan pengendalian mutu pendidikan dan kebudayaan;</li>
+                <li style="margin:0">pembinaan dan pengendalian UPT Dinas; dan</li>
+                <li style="margin:0">pelaksanaan tugas lainnya yang diberikan oleh pimpinan/ atasan sesuai tugas dan fungsinya.</li>
+              </ol>
+            </div>
+          </div>
         </div>
         <!--end of container-->
     </section>
@@ -148,5 +120,4 @@
         </div>
         <!--end of container-->
     </section>
-    {{-- END FOOTER --}}
 @endsection
