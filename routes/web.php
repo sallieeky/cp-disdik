@@ -7,6 +7,7 @@ use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\PpidController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RegulasiController;
 use App\Http\Controllers\TentangKamiController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,7 @@ Route::get('/penghargaan', [LandingController::class, 'penghargaan']);
 
 Route::get('/login', [DashboardController::class, 'login'])->middleware("guest")->name("login");
 Route::post('/login', [DashboardController::class, 'loginPost']);
+
 // DASHBOARD
 Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::get('/', [DashboardController::class, 'index']);
@@ -50,10 +52,14 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
 
   Route::prefix('kelola-halaman')->group(function () {
     Route::get('/', [DashboardController::class, 'kelolaHalaman']);
-
     Route::get('/beranda', [BerandaController::class, 'index']);
 
-    Route::get('/profil', [TentangKamiController::class, 'profil']);
+    Route::get('/profil', [ProfilController::class, 'index']);
+    Route::post('/profil/deskripsi/ubah', [ProfilController::class, 'deskripsiUbah']);
+    Route::post('/profil/riwayat-profil/tambah', [ProfilController::class, 'riwayatProfilTambah']);
+    Route::post('/profil/riwayat-profil/ubah', [ProfilController::class, 'riwayatProfilUbah']);
+    Route::post('/profil/riwayat-profil/hapus', [ProfilController::class, 'riwayatProfilHapus']);
+
     Route::get('/visi-misi-dan-tujuan', [TentangKamiController::class, 'visiMisiDanTujuan']);
     Route::get('/struktur-organisasi', [TentangKamiController::class, 'strukturOrganisasi']);
     Route::get('/tugas-dan-fungsi', [TentangKamiController::class, 'tugasDanFungsi']);

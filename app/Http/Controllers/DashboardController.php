@@ -25,11 +25,6 @@ class DashboardController extends Controller
         }
     }
 
-    public function externalLink()
-    {
-        return view("dashboard.external-link");
-    }
-
     public function kelolaHalaman()
     {
         return view("dashboard.kelola-halaman");
