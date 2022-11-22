@@ -5248,7 +5248,7 @@ table tbody .border-bottom-warning td {
       display: none; }
     .page-wrapper.compact-wrapper .page-body-wrapper header.main-nav .main-navbar .nav-menu {
       border-radius: 0;
-      height: calc(100vh - 355px);
+      height: calc(100vh - 100px);
       left: -300px;
       z-index: 99;
       -webkit-transition: color 1s ease;
@@ -5702,7 +5702,7 @@ table tbody .border-bottom-warning td {
         top: 85px;
         height: auto; }
         .page-wrapper.modern-sidebar.compact-wrapper .page-body-wrapper header.main-nav .main-navbar .nav-menu {
-          height: calc(100vh - 355px); }
+          height: calc(100vh - 100px); }
         .page-wrapper.modern-sidebar.compact-wrapper .page-body-wrapper header.main-nav.close_icon ~ footer {
           width: 100%;
           margin-left: unset; }

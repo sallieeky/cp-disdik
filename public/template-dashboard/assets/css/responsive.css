@@ -1127,7 +1127,7 @@
 
 @media screen and (max-width: 991px) {
   .page-wrapper.compact-wrapper .page-body-wrapper header.main-nav .main-navbar .nav-menu {
-    height: calc(100vh - 220px); }
+    height: calc(100vh - 100px); }
   .page-wrapper.compact-wrapper .page-body-wrapper header .sidebar-user {
     padding: 20px 30px; }
     .page-wrapper.compact-wrapper .page-body-wrapper header .sidebar-user .setting-primary {
@@ -1699,7 +1699,7 @@
     .page-wrapper.compact-wrapper .page-body-wrapper header.main-nav .sidebar-user ul {
       display: none; }
   .page-wrapper.compact-wrapper .page-body-wrapper header.main-nav .main-navbar .nav-menu {
-    height: calc(100vh - 190px); }
+    height: calc(100vh - 100px); }
   .order-history table tbody tr td img {
     width: 25px !important; }
   .calendar-basic .lnb-calendars > div {

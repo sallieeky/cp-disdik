@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,5 @@ Route::get('/regulasi', [LandingController::class, 'regulasi']);
 
 Route::get('/ppid', [LandingController::class, 'ppid']);
 Route::get('/penghargaan', [LandingController::class, 'penghargaan']);
+
+Route::get('/dashboard', [DashboardController::class, 'home']);
