@@ -331,7 +331,11 @@
         <script src="/template-dashboard/assets/js/script.js"></script>
         <!-- login js-->
         <!-- Plugin used-->
+        <script src="/template-dashboard/assets/js/notify/bootstrap-notify.min.js"></script>
+        <script src="/template-dashboard/assets/js/notify/notify-script.js"></script>
         <script src="/template-dashboard/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
         <script src="/template-dashboard/assets/js/datatable/datatables/datatable.custom.js"></script>
+
+        @yield("script")
     </body>
 </html>

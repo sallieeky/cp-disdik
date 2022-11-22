@@ -1,0 +1,6 @@
+di table umum
+name: pengunjung
+value: 0
+
+name: tentang
+value: lorem
