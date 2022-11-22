@@ -181,7 +181,10 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="nav-link menu-title link-nav active" href="/dashboard"><i data-feather="globe"></i><span>Beranda Dashboard</span></a>
+                                        <a class="nav-link menu-title link-nav" href="/dashboard"><i data-feather="globe"></i><span>Beranda Dashboard</span></a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link menu-title link-nav" href="/dashboard/external-link"><i data-feather="external-link"></i><span>Kelola External Link</span></a>
                                     </li>
                                     <li class="sidebar-main-title">
                                         <div>
@@ -189,22 +192,22 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="settings"></i><span>Beranda</span></a>
+                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman/beranda"><i data-feather="settings"></i><span>Beranda</span></a>
                                     </li>
                                     <li class="dropdown">
                                         <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="settings"></i><span>Tentang kami</span></a>
                                         <ul class="nav-submenu menu-content">
                                             <li>
-                                                <a href="/template-dashboard/theme/general-widget.html">Profil</a>
+                                                <a href="/dashboard/kelola-halaman/profil">Profil</a>
                                             </li>
                                             <li>
-                                                <a href="/template-dashboard/theme/chart-widget.html">Visi, misi, dan tujuan</a>
+                                                <a href="/dashboard/kelola-halaman/visi-misi-dan-tujuan">Visi, misi, dan tujuan</a>
                                             </li>
                                             <li>
-                                                <a href="/template-dashboard/theme/chart-widget.html">Struktur organisasi</a>
+                                                <a href="/dashboard/kelola-halaman/struktur-organisasi">Struktur organisasi</a>
                                             </li>
                                             <li>
-                                                <a href="/template-dashboard/theme/chart-widget.html">Rencana strategis</a>
+                                                <a href="/dashboard/kelola-halaman/rencana-strategis">Rencana strategis</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -212,24 +215,21 @@
                                         <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="settings"></i><span>Informasi</span></a>
                                         <ul class="nav-submenu menu-content">
                                             <li>
-                                                <a href="/template-dashboard/theme/general-widget.html">Berita</a>
+                                                <a href="/dashboard/kelola-halaman/berita">Berita</a>
                                             </li>
                                             <li>
-                                                <a href="/template-dashboard/theme/chart-widget.html">Pengumuman</a>
-                                            </li>
-                                            <li>
-                                                <a href="/template-dashboard/theme/chart-widget.html">Struktur organisasi</a>
+                                                <a href="/dashboard/kelola-halaman/pengumuman">Pengumuman</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="settings"></i><span>Regulasi</span></a>
+                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman/regulasi"><i data-feather="settings"></i><span>Regulasi</span></a>
                                     </li>
                                     <li>
-                                        <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="settings"></i><span>PPID</span></a>
+                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman/ppid"><i data-feather="settings"></i><span>PPID</span></a>
                                     </li>
                                     <li>
-                                        <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="settings"></i><span>Penghargaan</span></a>
+                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman/penghargaan"><i data-feather="settings"></i><span>Penghargaan</span></a>
                                     </li>
                                     <li class="sidebar-main-title">
                                         <div>
@@ -237,7 +237,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="nav-link menu-title link-nav" href="landing-page.html"><i data-feather="plus-square"></i><span>Manajemen halaman</span></a>
+                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman"><i data-feather="plus-square"></i><span>Kelola halaman</span></a>
                                     </li>
                                 </ul>
                             </div>
