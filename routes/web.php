@@ -36,8 +36,10 @@ Route::get('/regulasi', [LandingController::class, 'regulasi']);
 Route::get('/ppid', [LandingController::class, 'ppid']);
 Route::get('/penghargaan', [LandingController::class, 'penghargaan']);
 
+Route::get('/login', [DashboardController::class, 'login'])->middleware("guest")->name("login");
+Route::post('/login', [DashboardController::class, 'loginPost']);
 // DASHBOARD
-Route::prefix('dashboard')->group(function () {
+Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::get('/', [DashboardController::class, 'index']);
   Route::get('/external-link', [DashboardController::class, 'externalLink']);
 

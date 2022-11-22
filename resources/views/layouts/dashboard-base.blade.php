@@ -85,6 +85,7 @@
             type="text/css"
             href="/template-dashboard/assets/css/whether-icon.css"
         />
+        <link rel="stylesheet" type="text/css" href="/template-dashboard/assets/css/datatables.css">
         <!-- Plugins css Ends-->
         <!-- Bootstrap css-->
         <link
@@ -106,6 +107,8 @@
             type="text/css"
             href="/template-dashboard/assets/css/responsive.css"
         />
+        <!-- Custom css-->
+        @yield("css")
     </head>
     <body>
         <!-- Loader starts-->
@@ -328,5 +331,7 @@
         <script src="/template-dashboard/assets/js/script.js"></script>
         <!-- login js-->
         <!-- Plugin used-->
+        <script src="/template-dashboard/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+        <script src="/template-dashboard/assets/js/datatable/datatables/datatable.custom.js"></script>
     </body>
 </html>
