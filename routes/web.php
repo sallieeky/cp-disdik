@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\AplikasiDinasPendidikan;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExternalLinkController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\LayananLainnyaController;
 use App\Http\Controllers\PenghargaanController;
 use App\Http\Controllers\PpidController;
 use App\Http\Controllers\RegulasiController;
@@ -44,11 +42,11 @@ Route::post('/login', [DashboardController::class, 'loginPost']);
 // DASHBOARD
 Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::get('/', [DashboardController::class, 'index']);
-  Route::get('/external-link', [DashboardController::class, 'externalLink']);
 
-  Route::post('/external-link/info/tambah', [ExternalLinkController::class, 'tambah']);
-  Route::post('/external-link/info/ubah', [ExternalLinkController::class, 'ubah']);
-  Route::post('/external-link/info/hapus', [ExternalLinkController::class, 'hapus']);
+  Route::get('/external-link', [ExternalLinkController::class, 'index']);
+  Route::post('/external-link/tambah', [ExternalLinkController::class, 'tambah']);
+  Route::post('/external-link/ubah', [ExternalLinkController::class, 'ubah']);
+  Route::post('/external-link/hapus', [ExternalLinkController::class, 'hapus']);
 
   Route::prefix('kelola-halaman')->group(function () {
     Route::get('/', [DashboardController::class, 'kelolaHalaman']);
