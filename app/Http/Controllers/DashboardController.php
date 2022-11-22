@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view("dashboard.home");
+        return view("dashboard.beranda");
     }
 
     public function externalLink()

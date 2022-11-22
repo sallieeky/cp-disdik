@@ -96,40 +96,43 @@
         <div class="card-body">
           <div class="row">
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola beranda</a>
+              <a href="/dashboard/kelola-halaman/beranda"><i class="fa fa-gears"></i> Kelola beranda</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Visi, Misi, dan Tujuan</a>
+              <a href="/dashboard/kelola-halaman/profil"><i class="fa fa-gears"></i> Kelola Profil</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Struktur Organisasi</a>
+              <a href="/dashboard/kelola-halaman/visi-misi-dan-tujuan"><i class="fa fa-gears"></i> Kelola Visi, Misi, dan Tujuan</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Tujuan dan Fungsi</a>
+              <a href="/dashboard/kelola-halaman/struktur-organisasi"><i class="fa fa-gears"></i> Kelola Struktur Organisasi</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Rencana Strategis</a>
+              <a href="/dashboard/kelola-halaman/tugas-dan-fungsi"><i class="fa fa-gears"></i> Kelola Tugas dan Fungsi</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Berita</a>
+              <a href="/dashboard/kelola-halaman/rencana-strategis"><i class="fa fa-gears"></i> Kelola Rencana Strategis</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Pengumuman</a>
+              <a href="/dashboard/kelola-halaman/berita"><i class="fa fa-gears"></i> Kelola Berita</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Pengumuman</a>
+              <a href="/dashboard/kelola-halaman/pengumuman"><i class="fa fa-gears"></i> Kelola Pengumuman</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Regulasi</a>
+              <a href="/dashboard/kelola-halaman/pengumuman"><i class="fa fa-gears"></i> Kelola Pengumuman</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola PPID</a>
+              <a href="/dashboard/kelola-halaman/regulasi"><i class="fa fa-gears"></i> Kelola Regulasi</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Anggaran</a>
+              <a href="/dashboard/kelola-halaman/ppid"><i class="fa fa-gears"></i> Kelola PPID</a>
             </div>
             <div class="col-md-3 mb-3">
-              <a href="#"><i class="fa fa-gears"></i> Kelola Penghargaan</a>
+              <a href="/dashboard/kelola-halaman/anggaran"><i class="fa fa-gears"></i> Kelola Anggaran</a>
+            </div>
+            <div class="col-md-3 mb-3">
+              <a href="/dashboard/kelola-halaman/penghargaan"><i class="fa fa-gears"></i> Kelola Penghargaan</a>
             </div>
           </div>
         </div>

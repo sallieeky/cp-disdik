@@ -22,4 +22,8 @@ class TentangKamiController extends Controller
     {
         return view("dashboard.kelola-halaman.rencana-strategis");
     }
+    public function tugasDanFungsi()
+    {
+        return view("dashboard.kelola-halaman.tugas-fungsi");
+    }
 }

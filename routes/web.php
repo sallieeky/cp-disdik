@@ -49,6 +49,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/profil', [TentangKamiController::class, 'profil']);
     Route::get('/visi-misi-dan-tujuan', [TentangKamiController::class, 'visiMisiDanTujuan']);
     Route::get('/struktur-organisasi', [TentangKamiController::class, 'strukturOrganisasi']);
+    Route::get('/tugas-dan-fungsi', [TentangKamiController::class, 'tugasDanFungsi']);
     Route::get('/rencana-strategis', [TentangKamiController::class, 'rencanaStrategis']);
 
     Route::get('/berita', [InformasiController::class, 'berita']);
