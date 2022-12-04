@@ -1,3 +1,9 @@
+@php
+    use App\Models\Umum;
+
+    $icon = Umum::where("nama", "icon")->first()->nilai;
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -128,7 +134,7 @@
                             <a href="/" target="_blank">
                                 <img
                                     class="img-fluid"
-                                    src="/logo.jpg"
+                                    src="/storage/icon/{{ $icon }}"
                                     alt="Dashboard Company Profile Dinas Pendidikan Kota Balikpapan"
                                 />
                             </a>

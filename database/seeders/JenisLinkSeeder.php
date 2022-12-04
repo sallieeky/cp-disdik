@@ -15,6 +15,7 @@ class JenisLinkSeeder extends Seeder
      */
     public function run()
     {
+
         $nama = ["Aplikasi Dinas Pendidikan", "Link Informasi", "Layanan Lainnya"];
         foreach ($nama as $nm) {
             JenisLink::create([

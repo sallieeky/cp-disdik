@@ -1,3 +1,19 @@
+@php
+    use App\Models\ExternalLink;
+    use App\Models\Umum;
+    use Carbon\Carbon;
+    use Illuminate\Support\Facades\DB;
+
+    $icon = Umum::where("nama", "icon")->first()->nilai;
+    $pengunjung["semua"] = Umum::where("nama", "pengunjung")->count();
+    $pengunjung["hari_ini"] = Umum::where("nama", "pengunjung")->whereDate("created_at", Carbon::today())->get()->count();
+    $pengunjung["kemarin"] = Umum::where("nama", "pengunjung")->whereDate("created_at", Carbon::yesterday())->get()->count();
+    $pengunjung["minggu_ini"] = Umum::where("nama", "pengunjung")->whereBetween("created_at", [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->count();
+    $pengunjung["bulan_ini"] = Umum::where("nama", "pengunjung")->whereMonth('created_at', date('m'))->whereYear('created_at', date('Y'))->get()->count();
+
+    $infolink = ExternalLink::with("jenis_link")->whereRelation("jenis_link", "nama", "=", "Link Informasi")->get();
+    $aplikasidisdik = ExternalLink::with("jenis_link")->whereRelation("jenis_link", "nama", "=", "Aplikasi Dinas Pendidikan")->get()
+@endphp
 <!doctype html>
 <html lang="en">
     <head>
@@ -64,8 +80,8 @@
                         <div class="col-lg-3 col-md-2 hidden-xs">
                             <div class="bar__module">
                                 <a href="/">
-                                    <img class="logo logo-dark" alt="logo" src="/logo.jpg" style="object-fit: cover; max-height:100px" />
-                                    <img class="logo logo-light" alt="logo" src="/logo.jpg" style="object-fit: cover; max-height:100px" />
+                                    <img class="logo logo-dark" alt="logo" src="/storage/icon/{{ $icon }}" style="object-fit: cover; max-height:100px" />
+                                    <img class="logo logo-light" alt="logo" src="/storage/icon/{{ $icon }}" style="object-fit: cover; max-height:100px" />
                                 </a>
                             </div>
                             <!--end module-->
@@ -285,46 +301,13 @@
                         <div class="col">
                             <div class="slider slider--inline-arrows slider--arrows-hover text-center">
                                 <ul class="slides">
+                                    @foreach ($infolink as $dt)
                                     <li class="col-md-3 col-6">
-                                        <a href="#">
-                                            <img alt="Image" class="image--md" src="/img/info-link/BOS_Sekolah.jpg" />
+                                        <a href="{{ $dt->url }}" target="_blank">
+                                            <img alt="Image" class="image--md" src="/storage/external-link/{{ $dt->gambar }}" />
                                         </a>
                                     </li>
-                                    <li class="col-md-3 col-6">
-                                        <a href="#">
-                                            <img alt="Image" class="image--md" src="/img/info-link/DATA.jpg" />
-                                        </a>
-                                    </li>
-                                    <li class="col-md-3 col-6">
-                                        <a href="#">
-                                            <img alt="Image" class="image--md" src="/img/info-link/INFO_KUIS_KIHAJAR.jpg" />
-                                        </a>
-                                    </li>
-                                    <li class="col-md-3 col-6">
-                                        <a href="#">
-                                            <img alt="Image" class="image--md" src="/img/info-link/LHKPN.png" />
-                                        </a>
-                                    </li>
-                                    <li class="col-md-3 col-6">
-                                        <a href="#">
-                                            <img alt="Image" class="image--md" src="/img/info-link/ppdb20201.jpg" />
-                                        </a>
-                                    </li>
-                                    <li class="col-md-3 col-6">
-                                        <a href="#">
-                                            <img alt="Image" class="image--md" src="/img/info-link/SIRUP2.png" />
-                                        </a>
-                                    </li>
-                                    <li class="col-md-3 col-6">
-                                        <a href="#">
-                                            <img alt="Image" class="image--md" src="/img/info-link/sp4nLapor.jpg" />
-                                        </a>
-                                    </li>
-                                    <li class="col-md-3 col-6">
-                                        <a href="#">
-                                            <img alt="Image" class="image--md" src="/img/info-link/whistle_blower.jpg" />
-                                        </a>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -348,50 +331,34 @@
                         <div class="col-md-6 col-lg-3 mb-5">
                             <h6 class="type--uppercase">External Link Aplikasi Dinas Pendidikan dan Kebudayaan</h6>
                             <div class="row">
+                                @foreach ($aplikasidisdik as $dt)
                                 <div class="col-md-6 mb-3">
-                                    <a href="#"><img src="/img/bener_semarmesem.jpg"></a>
+                                    <a href="{{ $dt->url }}"><img src="/storage/external-link/{{ $dt->gambar }}"></a>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <a href="#"><img src="/img/bener_ekin.jpg"></a>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <a href="#"><img src="/img/bener_simpelcerdas.jpg"></a>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <a href="#"><img src="/img/BOSDA.jpg"></a>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <a href="#"><img src="/img/logo_sadat_gtk.jpg"></a>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <a href="#"><img src="/img/mandat_seni.jpg"></a>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <a href="#"><img src="/img/SIPD.jpg"></a>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 mb-5">
                             <h6 class="type--uppercase">Status Pengunjung</h6>
                             <div class="text-center">
                                 <strong>TOTAL</strong>
-                                <h3>10000</h3>
+                                <h3>{{ $pengunjung["semua"] }}</h3>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <small>Hari ini</small>
-                                <small>100000</small>
+                                <small>{{ $pengunjung["hari_ini"] }}</small>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <small>Kemarin</small>
-                                <small>100000</small>
+                                <small>{{ $pengunjung["kemarin"] }}</small>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <small>Minggu ini</small>
-                                <small>100000</small>
+                                <small>{{ $pengunjung["minggu_ini"] }}</small>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <small>Bulan ini</small>
-                                <small>100000</small>
+                                <small>{{ $pengunjung["bulan_ini"] }}</small>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">

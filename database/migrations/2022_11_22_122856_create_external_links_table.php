@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('external_links', function (Blueprint $table) {
             $table->id();
-            $table->integer("user_id");
+            $table->integer("user_id")->default(1);
             $table->integer("jenis_link_id");
             $table->text("gambar");
             $table->text("url");

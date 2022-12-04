@@ -3,15 +3,16 @@
 @section('content')
     <section class="cover height-70 imagebg text-center slider slider--ken-burns" data-arrows="true" data-paging="true">
         <ul class="slides">
+            @foreach ($slider as $dt)
             <li class="imagebg" data-overlay="4">
                 <div class="background-image-holder background--top">
-                    <img alt="background" src="/img/beranda-hero.jpg" />
+                    <img alt="background" src="/storage/slider/{{ $dt->gambar }}" />
                 </div>
                 <div class="container pos-vertical-center">
                     <div class="row">
                         <div class="col-md-12">
                             <h1>
-                                Selamat datang di <span class="text-primary">Dinas Pendidikan Kota Balikpapan</span>
+                                {{ $dt->judul }}
                             </h1>
                         </div>
                     </div>
@@ -19,7 +20,8 @@
                 </div>
                 <!--end of container-->
             </li>
-            <li class="imagebg" data-overlay="4">
+            @endforeach
+            {{-- <li class="imagebg" data-overlay="4">
                 <div class="background-image-holder">
                     <img alt="background" src="/template/img/landing-3.jpg" />
                 </div>
@@ -34,7 +36,7 @@
                     <!--end of row-->
                 </div>
                 <!--end of container-->
-            </li>
+            </li> --}}
         </ul>
     </section>
     <section class="text-center">
@@ -203,18 +205,11 @@
                 </div>
             </div>
             <div class="row justify-content-center mt-3">
-                <a href="http://kihajar.kemdikbud.go.id/" target="_blank">
-                    <img src="/img/b-kihajar.png" alt="layanan anugerah kihajar" class="img" width="200">
+                @foreach ($layananlainnya as $dt)
+                <a href="{{ $dt->url }}" target="_blank">
+                    <img src="/storage/external-link/{{ $dt->gambar }}" alt="{{ $dt->url }}" class="img" width="200">
                 </a>
-                <a href="http://belajar.kemdikbud.go.id/" target="_blank">
-                    <img src="/img/b-rumahbelajar.png" alt="layanan anugerah kihajar" class="img" width="200">
-                </a>
-                <a href="http://tve.kemdikbud.go.id/" target="_blank">
-                    <img src="/img/b-suaraedukasi.png" alt="layanan anugerah kihajar" class="img" width="200">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="/img/b-tvedukasi.png" alt="layanan anugerah kihajar" class="img" width="200">
-                </a>
+                @endforeach
             </div>
         </div>
     </section>
