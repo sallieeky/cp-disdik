@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        $this->call(UmumSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(JenisLinkSeeder::class);
     }
