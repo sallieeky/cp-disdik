@@ -183,18 +183,16 @@
                                             <h6>Umum</h6>
                                         </div>
                                     </li>
-                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/beranda"><i data-feather="globe"></i><span>Beranda Dashboard</span></a></li>
+                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/beranda"><i data-feather="home"></i><span>Beranda Dashboard</span></a></li>
                                     <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/umum"><i data-feather="settings"></i><span>Kelola Data Umum</span></a></li>
                                     <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/external-link"><i data-feather="external-link"></i><span>Kelola External Link</span></a></li>
-                                    {{-- <li class="sidebar-main-title">
+                                    <li class="sidebar-main-title">
                                         <div>
                                             <h6>Kelola Halaman</h6>
                                         </div>
                                     </li>
-                                    <li>
-                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman/beranda"><i data-feather="settings"></i><span>Beranda</span></a>
-                                    </li>
-                                    <li class="dropdown">
+                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman"><i data-feather="settings"></i><span>Kelola Halaman</span></a></li>
+                                    {{-- <li class="dropdown">
                                         <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="settings"></i><span>Tentang kami</span></a>
                                         <ul class="nav-submenu menu-content">
                                             <li>

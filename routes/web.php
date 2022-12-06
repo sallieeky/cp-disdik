@@ -63,12 +63,13 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/umum/slider/ubah', [DashboardController::class, 'sliderUbah']);
   Route::post('/umum/slider/hapus', [DashboardController::class, 'sliderHapus']);
 
-
-
   Route::get('/external-link', [ExternalLinkController::class, 'index']);
   Route::post('/external-link/tambah', [ExternalLinkController::class, 'tambah']);
   Route::post('/external-link/ubah', [ExternalLinkController::class, 'ubah']);
   Route::post('/external-link/hapus', [ExternalLinkController::class, 'hapus']);
+
+  Route::get('/kelola-halaman', [DashboardController::class, 'kelolaHalaman']);
+
 
   // Route::prefix('kelola-halaman')->group(function () {
   //   Route::get('/', [DashboardController::class, 'kelolaHalaman']);
