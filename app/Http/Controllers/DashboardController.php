@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
+use App\Models\Umum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,7 +11,55 @@ class DashboardController extends Controller
 {
     public function index()
     {
+
         return view("dashboard.beranda");
+    }
+    public function umum()
+    {
+        $slider = Slider::all();
+        $icon = Umum::where("nama", "icon")->first()->nilai;
+        return view("dashboard.umum", compact("slider", "icon"));
+    }
+    public function iconUbah(Request $request)
+    {
+        $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
+        $data = Umum::where("nama", "icon")->get();
+        if ($data) {
+            Umum::where("nama", "icon")->update([
+                "nilai" => $request->gambar,
+                "user_id" => Auth::user()->id
+            ]);
+        }
+        $request->file("file_gambar")->storeAs("public/icon", $request["gambar"]);
+        return back()->with("pesan", "ubah");
+    }
+    public function sliderTambah(Request $request)
+    {
+        $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
+        $request["user_id"] = Auth::user()->id;
+        Slider::create($request->all());
+        $request->file("file_gambar")->storeAs("public/slider", $request["gambar"]);
+        return back()->with("pesan", "tambah");
+    }
+    public function sliderUbah(Request $request)
+    {
+        if ($request->file("file_gambar")) {
+            $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
+            $request->file("file_gambar")->storeAs("public/slider", $request["gambar"]);
+        }
+        $request["user_id"] = Auth::user()->id;
+        Slider::where("id", $request->id)
+            ->update([
+                "user_id" => $request->user_id,
+                "gambar" => $request->gambar,
+                "judul" => $request->judul
+            ]);
+        return back()->with("pesan", "ubah");
+    }
+    public function sliderHapus(Request $request)
+    {
+        Slider::find($request->id)->delete();
+        return back()->with("pesan", "hapus");
     }
 
     public function login()

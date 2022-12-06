@@ -10,6 +10,7 @@ use App\Http\Controllers\PpidController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RegulasiController;
 use App\Http\Controllers\TentangKamiController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,15 @@ use Illuminate\Support\Facades\Route;
 
 // LANDING PAGE
 Route::get('/', [LandingController::class, 'beranda']);
+Route::get('/tes', function () {
+  return view("tes");
+});
+Route::get('/tes2', function () {
+  return view("tes2");
+});
+Route::post('/tes2', function (Request $request) {
+  return $request;
+});
 Route::get('/profil', [LandingController::class, 'profil']);
 Route::get('/visi-misi-tujuan', [LandingController::class, 'visiMisi']);
 Route::get('/struktur-organisasi', [LandingController::class, 'strukturOrganisasi']);
@@ -43,33 +53,43 @@ Route::post('/login', [DashboardController::class, 'loginPost']);
 
 // DASHBOARD
 Route::prefix('dashboard')->middleware(["auth"])->group(function () {
-  Route::get('/', [DashboardController::class, 'index']);
+  Route::get('/', function () {
+    return redirect("/dashboard/beranda");
+  });
+  Route::get('/beranda', [DashboardController::class, 'index']);
+  Route::get('/umum', [DashboardController::class, 'umum']);
+  Route::post('/umum/icon/ubah', [DashboardController::class, 'iconUbah']);
+  Route::post('/umum/slider/tambah', [DashboardController::class, 'sliderTambah']);
+  Route::post('/umum/slider/ubah', [DashboardController::class, 'sliderUbah']);
+  Route::post('/umum/slider/hapus', [DashboardController::class, 'sliderHapus']);
+
+
 
   Route::get('/external-link', [ExternalLinkController::class, 'index']);
   Route::post('/external-link/tambah', [ExternalLinkController::class, 'tambah']);
   Route::post('/external-link/ubah', [ExternalLinkController::class, 'ubah']);
   Route::post('/external-link/hapus', [ExternalLinkController::class, 'hapus']);
 
-  Route::prefix('kelola-halaman')->group(function () {
-    Route::get('/', [DashboardController::class, 'kelolaHalaman']);
-    Route::get('/beranda', [BerandaController::class, 'index']);
+  // Route::prefix('kelola-halaman')->group(function () {
+  //   Route::get('/', [DashboardController::class, 'kelolaHalaman']);
+  //   Route::get('/beranda', [BerandaController::class, 'index']);
 
-    Route::get('/profil', [ProfilController::class, 'index']);
-    Route::post('/profil/deskripsi/ubah', [ProfilController::class, 'deskripsiUbah']);
-    Route::post('/profil/riwayat-profil/tambah', [ProfilController::class, 'riwayatProfilTambah']);
-    Route::post('/profil/riwayat-profil/ubah', [ProfilController::class, 'riwayatProfilUbah']);
-    Route::post('/profil/riwayat-profil/hapus', [ProfilController::class, 'riwayatProfilHapus']);
+  //   Route::get('/profil', [ProfilController::class, 'index']);
+  //   Route::post('/profil/deskripsi/ubah', [ProfilController::class, 'deskripsiUbah']);
+  //   Route::post('/profil/riwayat-profil/tambah', [ProfilController::class, 'riwayatProfilTambah']);
+  //   Route::post('/profil/riwayat-profil/ubah', [ProfilController::class, 'riwayatProfilUbah']);
+  //   Route::post('/profil/riwayat-profil/hapus', [ProfilController::class, 'riwayatProfilHapus']);
 
-    Route::get('/visi-misi-dan-tujuan', [TentangKamiController::class, 'visiMisiDanTujuan']);
-    Route::get('/struktur-organisasi', [TentangKamiController::class, 'strukturOrganisasi']);
-    Route::get('/tugas-dan-fungsi', [TentangKamiController::class, 'tugasDanFungsi']);
-    Route::get('/rencana-strategis', [TentangKamiController::class, 'rencanaStrategis']);
+  //   Route::get('/visi-misi-dan-tujuan', [TentangKamiController::class, 'visiMisiDanTujuan']);
+  //   Route::get('/struktur-organisasi', [TentangKamiController::class, 'strukturOrganisasi']);
+  //   Route::get('/tugas-dan-fungsi', [TentangKamiController::class, 'tugasDanFungsi']);
+  //   Route::get('/rencana-strategis', [TentangKamiController::class, 'rencanaStrategis']);
 
-    Route::get('/berita', [InformasiController::class, 'berita']);
-    Route::get('/pengumuman', [InformasiController::class, 'pengumuman']);
+  //   Route::get('/berita', [InformasiController::class, 'berita']);
+  //   Route::get('/pengumuman', [InformasiController::class, 'pengumuman']);
 
-    Route::get('/regulasi', [RegulasiController::class, 'index']);
-    Route::get('/ppid', [PpidController::class, 'index']);
-    Route::get('/penghargaan', [PenghargaanController::class, 'index']);
-  });
+  //   Route::get('/regulasi', [RegulasiController::class, 'index']);
+  //   Route::get('/ppid', [PpidController::class, 'index']);
+  //   Route::get('/penghargaan', [PenghargaanController::class, 'index']);
+  // });
 });

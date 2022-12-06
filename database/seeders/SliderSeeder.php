@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Umum;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UmumSeeder extends Seeder
+class SliderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +14,6 @@ class UmumSeeder extends Seeder
      */
     public function run()
     {
-        Umum::create([
-            "nama" => "icon",
-            "nilai" => "logo.jpg",
-            "user_id" => 1
-        ]);
+        //
     }
 }

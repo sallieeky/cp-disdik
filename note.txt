@@ -4,3 +4,15 @@ value: 0
 
 name: tentang
 value: lorem
+
+name: logo
+value: logo.jpg
+
+halaman static
+beranda
+profil
+rencana strategis
+informasi
+berita
+regulasi (dibagi)
+pernghargaan

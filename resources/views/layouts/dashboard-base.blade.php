@@ -183,13 +183,10 @@
                                             <h6>Umum</h6>
                                         </div>
                                     </li>
-                                    <li>
-                                        <a class="nav-link menu-title link-nav" href="/dashboard"><i data-feather="globe"></i><span>Beranda Dashboard</span></a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link menu-title link-nav" href="/dashboard/external-link"><i data-feather="external-link"></i><span>Kelola External Link</span></a>
-                                    </li>
-                                    <li class="sidebar-main-title">
+                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/beranda"><i data-feather="globe"></i><span>Beranda Dashboard</span></a></li>
+                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/umum"><i data-feather="settings"></i><span>Kelola Data Umum</span></a></li>
+                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/external-link"><i data-feather="external-link"></i><span>Kelola External Link</span></a></li>
+                                    {{-- <li class="sidebar-main-title">
                                         <div>
                                             <h6>Kelola Halaman</h6>
                                         </div>
@@ -244,7 +241,7 @@
                                     </li>
                                     <li>
                                         <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman"><i data-feather="plus-square"></i><span>Kelola halaman</span></a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                             <div class="right-arrow" id="right-arrow">
