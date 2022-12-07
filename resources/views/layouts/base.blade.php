@@ -44,22 +44,9 @@
     </head>
     <body class="">
         <a id="start"></a>
-        <section class="bar bar-3 bar--sm bg--primary">
-            <div class="px-5">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="bar__module">
-                            <span class="text-light">Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>
-                        </div>
-                    </div>
-                </div>
-                <!--end of row-->
-            </div>
-            <!--end of container-->
-        </section>
         <!--end bar-->
         <div class="nav-container">
-            <div class="bar bar--sm visible-xs">
+            <div class="bar bar--sm visible-sm visible-xs">
                 <div class="container">
                     <div class="row">
                         <div class="col-3 col-md-2">
@@ -79,209 +66,200 @@
                 <!--end of container-->
             </div>
             <!--end bar-->
-            <nav id="menu1" class="bar bar--lg bar-1 hidden-xs py-2 px-5">
+            <nav id="menu1" class="bar bar--lg bar-1 hidden-xs hidden-sm py-3 px-3">
                 <div class="">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-2 hidden-xs">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-3 col-md-2 hidden-sm" style="font-size:1.5rem">
                             <div class="bar__module">
-                                <a href="/">
-                                    <img class="logo logo-dark" alt="logo" src="/storage/icon/{{ $icon }}" style="object-fit: cover; max-height:100px" />
-                                    <img class="logo logo-light" alt="logo" src="/storage/icon/{{ $icon }}" style="object-fit: cover; max-height:100px" />
+                                <a href="/" style="color: #1D1D1D; text-decoration:none">
+                                    Disdikbud <span class="text-primary">Balikpapan</span>
+                                    {{-- <img class="logo logo-dark" alt="logo" src="/logo.jpg" style="object-fit: cover; max-height:100px" /> --}}
+                                    {{-- <img class="logo logo-light" alt="logo" src="/logo.jpg" style="object-fit: cover; max-height:100px" /> --}}
                                 </a>
                             </div>
                             <!--end module-->
                         </div>
-                        <div class="col-lg-9 col-md-12 text-right text-left-xs text-left-sm">
-                            <div class="d-lg-flex align-items-lg-center justify-content-lg-end" style="height: 100%;">
-                                <ul class="menu-horizontal text-left">
-                                    <li class="dropdown">
-                                        <a href="/">Beranda</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <span class="dropdown__trigger">Tentang Kami</span>
-                                        <div class="dropdown__container">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="dropdown__content col-lg-2 col-md-4">
-                                                        <ul class="menu-vertical">
-                                                            <li class="">
-                                                                <a href="/profil">
-                                                                    Profil
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="/visi-misi-tujuan">
-                                                                    Visi, Misi, dan Tujuan
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="/struktur-organisasi">
-                                                                    Struktur Organisasi
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="/tugas-dan-fungsi">
-                                                                    Tugas dan Fungsi
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Rencana Strategis
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!--end dropdown content-->
+                        <div class="col-lg-7 col-md-8 text-center hidden-sm text-left-xs text-left-sm">
+                            <ul class="menu-horizontal text-left" style="top: 0">
+                                <li class="dropdown">
+                                    <a href="/" style="color: #1D1D1D">Beranda</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/tentang-kami" style="color: #1D1D1D">Tentang Kami</a>
+                                </li>
+                                {{-- <li class="dropdown">
+                                    <span class="dropdown__trigger">Tentang Kami</span>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-lg-2 col-md-4">
+                                                    <ul class="menu-vertical">
+                                                        <li>
+                                                            <a href="/profil">
+                                                                Profil
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/visi-misi-tujuan">
+                                                                Visi, Misi, dan Tujuan
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/struktur-organisasi">
+                                                                Struktur Organisasi
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/tugas-dan-fungsi">
+                                                                Tugas dan Fungsi
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                Rencana Strategis
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!--end row-->
+                                                <!--end dropdown content-->
                                             </div>
+                                            <!--end row-->
                                         </div>
-                                        <!--end dropdown container-->
-                                    </li>
-                                    <li class="dropdown">
-                                        <span class="dropdown__trigger">Informasi</span>
-                                        <div class="dropdown__container">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="dropdown__content col-lg-2 col-md-4">
-                                                        <ul class="menu-vertical">
-                                                            <li class="">
-                                                                <a href="/berita">
-                                                                    Berita
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="/pengumuman">
-                                                                    Pengumuman
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!--end dropdown content-->
+                                    </div>
+                                    <!--end dropdown container-->
+                                </li> --}}
+                                <li class="dropdown">
+                                    <span class="dropdown__trigger">Informasi</span>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-lg-2 col-md-4">
+                                                    <ul class="menu-vertical">
+                                                        <li class="">
+                                                            <a href="/berita">
+                                                                Berita
+                                                            </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="/pengumuman">
+                                                                Pengumuman
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!--end row-->
+                                                <!--end dropdown content-->
                                             </div>
+                                            <!--end row-->
                                         </div>
-                                        <!--end dropdown container-->
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="/regulasi">Regulasi</a>
-                                    </li>
-                                    {{-- <li class="dropdown">
-                                        <span class="dropdown__trigger">Regulasi</span>
-                                        <div class="dropdown__container">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="dropdown__content col-lg-3 col-md-4">
-                                                        <ul class="menu-vertical">
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Regulasi Undang-undang
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Regulasi Peraturan Pemerintah
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Regulasi Peraturan Menteri
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Regulasi Peraturan Daerah
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Regulasi Peraturan Walikota
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!--end dropdown content-->
+                                    </div>
+                                    <!--end dropdown container-->
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/regulasi">Regulasi</a>
+                                </li>
+                                {{-- <li class="dropdown">
+                                    <span class="dropdown__trigger">Regulasi</span>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-lg-3 col-md-4">
+                                                    <ul class="menu-vertical">
+                                                        <li class="">
+                                                            <a href="#">
+                                                                Regulasi Undang-undang
+                                                            </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="#">
+                                                                Regulasi Peraturan Pemerintah
+                                                            </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="#">
+                                                                Regulasi Peraturan Menteri
+                                                            </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="#">
+                                                                Regulasi Peraturan Daerah
+                                                            </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="#">
+                                                                Regulasi Peraturan Walikota
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!--end row-->
+                                                <!--end dropdown content-->
                                             </div>
+                                            <!--end row-->
                                         </div>
-                                        <!--end dropdown container-->
-                                    </li> --}}
-                                    <li class="dropdown">
-                                        <a href="/ppid">PPID</a>
-                                    </li>
-                                    {{-- <li class="dropdown">
-                                        <span class="dropdown__trigger">PPID</span>
-                                        <div class="dropdown__container">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="dropdown__content col-lg-2 col-md-4">
-                                                        <ul class="menu-vertical">
-                                                            <li class="">
-                                                                <a href="/penjelasan-ppid">
-                                                                    Penjelasan PPID
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Pengumuman
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!--end dropdown content-->
+                                    </div>
+                                    <!--end dropdown container-->
+                                </li> --}}
+                                <li class="dropdown">
+                                    <a href="/ppid">PPID</a>
+                                </li>
+                                {{-- <li class="dropdown">
+                                    <span class="dropdown__trigger">PPID</span>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-lg-2 col-md-4">
+                                                    <ul class="menu-vertical">
+                                                        <li class="">
+                                                            <a href="/penjelasan-ppid">
+                                                                Penjelasan PPID
+                                                            </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="#">
+                                                                Pengumuman
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!--end row-->
+                                                <!--end dropdown content-->
                                             </div>
+                                            <!--end row-->
                                         </div>
-                                        <!--end dropdown container-->
-                                    </li> --}}
-                                    <li class="dropdown">
-                                        <span class="dropdown__trigger">Anggaran</span>
-                                        <div class="dropdown__container">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="dropdown__content col-lg-2 col-md-4">
-                                                        <ul class="menu-vertical">
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Menu 1
-                                                                </a>
-                                                            </li>
-                                                            <li class="">
-                                                                <a href="#">
-                                                                    Menu 2
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!--end dropdown content-->
+                                    </div>
+                                    <!--end dropdown container-->
+                                </li> --}}
+                                <li class="dropdown">
+                                    <span class="dropdown__trigger">Anggaran</span>
+                                    <div class="dropdown__container">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="dropdown__content col-lg-2 col-md-4">
+                                                    <ul class="menu-vertical">
+                                                        <li class="">
+                                                            <a href="#">
+                                                                Menu 1
+                                                            </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="#">
+                                                                Menu 2
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!--end row-->
+                                                <!--end dropdown content-->
                                             </div>
+                                            <!--end row-->
                                         </div>
-                                        <!--end dropdown container-->
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="/penghargaan">Penghargaan</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--end module-->
-                            <div class="bar__module">
-                                {{-- <a class="btn btn--sm type--uppercase" href="#">
-                                    <span class="btn__text">
-                                        Try Builder
-                                    </span>
-                                </a>
-                                <a class="btn btn--sm btn--primary type--uppercase" href="#">
-                                    <span class="btn__text">
-                                        Buy Now
-                                    </span>
-                                </a> --}}
-                            </div>
-                            <!--end module-->
+                                    </div>
+                                    <!--end dropdown container-->
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/penghargaan">Penghargaan</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-2 text-right">
+                            <a href="#" style="background-color: #007BFF; padding: 8px 2em; border-radius: 16px; color:#FEFEFE; text-decoration:none">Kontak Kami</a>
                         </div>
                     </div>
                     <!--end of row-->
@@ -290,6 +268,7 @@
             </nav>
             <!--end bar-->
         </div>
+
         <div class="main-container">
 
             @yield('content')

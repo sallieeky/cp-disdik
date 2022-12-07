@@ -35,6 +35,7 @@ Route::get('/tes2', function () {
 Route::post('/tes2', function (Request $request) {
   return $request;
 });
+Route::get('/tentang-kami', [LandingController::class, 'tentangKami']);
 Route::get('/profil', [LandingController::class, 'profil']);
 Route::get('/visi-misi-tujuan', [LandingController::class, 'visiMisi']);
 Route::get('/struktur-organisasi', [LandingController::class, 'strukturOrganisasi']);

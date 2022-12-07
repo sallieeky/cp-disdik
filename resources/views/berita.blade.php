@@ -11,7 +11,7 @@
             background-size: 100%;
             object-fit: cover;
     ">
-        <div class="container pos-vertical-center">
+        <div class="container pos-vertical-center text-center">
             <p style="font-weight: 600; font-size: 2.3em">
                 Berita Dinas Pendidikan Kota Balikpapan
             </p>

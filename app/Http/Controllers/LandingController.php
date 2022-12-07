@@ -26,6 +26,11 @@ class LandingController extends Controller
         return view("profil");
     }
 
+    public function tentangKami()
+    {
+        return view("tentang-kami");
+    }
+
     public function visiMisi()
     {
         return view("visi-misi-tujuan");

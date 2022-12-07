@@ -5,13 +5,12 @@
     {{-- HEADER --}}
     <section class="cover height-30 imagebg" id="home" style="
             background-blend-mode: multiply;
-            background-image: url(/img/beranda-hero.jpg);
             background-color: #003049;
             background-repeat: no-repeat;
             background-size: 100%;
             object-fit: cover;
     ">
-        <div class="container pos-vertical-center">
+        <div class="container pos-vertical-center text-center">
             <p style="font-weight: 600; font-size: 2.3em">
                 Pengumuman Dinas Pendidikan Kota Balikpapan
             </p>

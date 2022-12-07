@@ -89,7 +89,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Quicksand', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   color: #252525;
   font-weight: 300;
   font-variant-ligatures: common-ligatures;
@@ -833,7 +833,7 @@ div[data-overlay] ul {
 }
 /**! 06. Buttons **/
 .btn {
-  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Quicksand','Open Sans', 'Helvetica', 'Arial', sans-serif;
   transition: 0.1s linear;
   -webkit-transition: 0.1s linear;
   -moz-transition: 0.1s linear;
@@ -1101,7 +1101,7 @@ ul:last-child {
 .menu-horizontal > li:not(:hover) > a,
 .menu-horizontal > li:not(:hover) > span,
 .menu-horizontal > li:not(:hover) > .modal-instance > .modal-trigger {
-  opacity: .5;
+  opacity: 1;
 }
 .menu-horizontal > li > a,
 .menu-horizontal > li > span,
@@ -1114,7 +1114,8 @@ ul:last-child {
 .menu-horizontal > li > a:hover,
 .menu-horizontal > li > span:hover,
 .menu-horizontal > li > .modal-instance > .modal-trigger:hover {
-  color: #252525;
+  /* color: #252525; */
+  color: #007BFF;
 }
 .bg--dark .menu-horizontal > li > a,
 .bg--dark .menu-horizontal > li > span {
@@ -1554,7 +1555,7 @@ div.recaptcha iframe {
 .accordion li.active .accordion__content {
   opacity: 1;
   visibility: visible;
-  max-height: 500px;
+  max-height: 100%;
 }
 .accordion li.active .accordion__content > * {
   display: inline-block;
@@ -3021,7 +3022,7 @@ form[action*='createsend.com'] p > label:first-child {
   margin-bottom: 0.92857143em;
 }
 form[action*='list-manage.com'] h2 {
-  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Quicksand', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   color: #252525;
   font-weight: 300;
   font-variant-ligatures: common-ligatures;
@@ -4743,7 +4744,7 @@ section.parallax .row .background-image-holder {
 /*! -- Stack Bars -- */
 .menu-horizontal > li,
 .menu-vertical > li {
-  font-family: 'Open Sans', 'Roboto', 'Helvetica', Sans-Serif;
+  font-family: 'Quicksand', 'Open Sans', 'Roboto', 'Helvetica', Sans-Serif;
 }
 .bar .logo {
   max-height: 1.85714286em;
@@ -4787,9 +4788,9 @@ section.parallax .row .background-image-holder {
 }
 .bar-1 .menu-horizontal > li > .dropdown__trigger,
 .bar-1 .menu-horizontal > li > a {
-  font-size: 0.857142857142857em;
+  font-size: 1em;
   line-height: 2.166666666666667em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 600;
   letter-spacing: .5px;
 }
