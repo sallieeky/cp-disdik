@@ -20,5 +20,10 @@ class UmumSeeder extends Seeder
             "nilai" => "logo.jpg",
             "user_id" => 1
         ]);
+        Umum::create([
+            "nama" => "pengunjung",
+            "nilai" => 0,
+            "user_id" => 1
+        ]);
     }
 }
