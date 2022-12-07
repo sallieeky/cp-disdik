@@ -16,8 +16,9 @@ return new class extends Migration
     {
         Schema::create('halamen', function (Blueprint $table) {
             $table->id();
-            $table->integer("user_id");
-            $table->integer("part_id");
+            $table->integer("user_id")->nullable();
+            $table->integer("part_id")->nullable();
+            $table->string("tipe")->default("dinamis");
             $table->string("url");
             $table->string("judul");
             $table->timestamps();

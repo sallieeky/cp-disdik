@@ -7,13 +7,32 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header pb-0">
-          <h5>Kelola external link</h5>
-          <span>Kelola external link dari aplikasi-aplikasi dan website yang berhubungan dengan Dinas Pendidikan Kota Balikpapan</span>
+          <h5>Kelola halaman</h5>
+          <span>Kelola halaman yang ada pada landing page</span>
         </div>
         <div class="card-body">
           <div class="row">
             <div class="col-md-12">
-              <h5>awdaw</h5>
+              <div class="table-responsive table-sm">
+                <table class="display " id="tabel-1">
+                  <thead>
+                    <tr>
+                      <th>Judul</th>
+                      <th>Url</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($data as $dt)
+                    <tr>
+                      <td>{{ $dt->judul }}</td>
+                      <td><a href="{{ $dt->url }}" target="_blank">{{ $dt->url }} <i class="fa fa-external-link"></i></a></td>
+                      <td><a href="/kelola-halaman/{{ $dt->id }}" class="btn btn-outline-primary">Kelola <i class="fa fa-wrench"></i></a></td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Halaman;
 use App\Models\Slider;
 use App\Models\Umum;
 use Illuminate\Http\Request;
@@ -77,6 +78,7 @@ class DashboardController extends Controller
 
     public function kelolaHalaman()
     {
-        return view("dashboard.kelola-halaman");
+        $data = Halaman::all();
+        return view("dashboard.kelola-halaman", compact("data"));
     }
 }
