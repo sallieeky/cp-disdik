@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('riwayat_profils', function (Blueprint $table) {
+        Schema::create('rencana_strategis', function (Blueprint $table) {
             $table->id();
-            $table->integer("user_id");
+            $table->integer("user_id")->default(1);
             $table->string("nama");
             $table->text("file");
-            $table->string("size");
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('riwayat_profils');
+        Schema::dropIfExists('rencana_strategis');
     }
 };

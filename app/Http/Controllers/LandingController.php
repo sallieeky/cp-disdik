@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ExternalLink;
+use App\Models\RencanaStrategis;
 use App\Models\Slider;
 use App\Models\Umum;
 use Illuminate\Http\Request;
@@ -31,7 +32,8 @@ class LandingController extends Controller
         $profil = Umum::where("nama", "profil")->first();
         $visimisi = Umum::where("nama", "visimisi")->first();
         $strukturorganisasi = Umum::where("nama", "strukturorganisasi")->first();
-        return view("tentang-kami", compact("profil", "visimisi", "strukturorganisasi"));
+        $rencanastrategis = RencanaStrategis::all();
+        return view("tentang-kami", compact("profil", "visimisi", "strukturorganisasi", "rencanastrategis"));
     }
 
     public function visiMisi()

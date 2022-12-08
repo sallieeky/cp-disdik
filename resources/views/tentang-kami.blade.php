@@ -57,8 +57,9 @@
                 <div class="accordion__content">
                     <div class="container">
                         <ul>
-                            <li><a href="#" class="w-100 d-inline-block"><i class="fa fa-file-pdf"></i> Ajdaiwdjawoidi jioawdi </a></li>
-                            <li><a href="#" class="w-100 d-inline-block"><i class="fa fa-file-pdf"></i> Ajdaiwdjawoidi jioawdi </a></li>
+                            @foreach ($rencanastrategis as $rs)
+                                <li><a href="/storage/renstra/{{ $rs->file }}" class="w-100 d-inline-block"><i class="fa fa-file-pdf"></i> {{ $rs->nama }} </a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

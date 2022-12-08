@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RencanaStrategis;
 use App\Models\Umum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,8 @@ class TentangKamiController extends Controller
         $profil = Umum::where("nama", "profil")->first();
         $visimisi = Umum::where("nama", "visimisi")->first();
         $strukturorganisasi = Umum::where("nama", "strukturorganisasi")->first();
-        return view("dashboard.kelola-halaman.tentang-kami", compact("profil", "visimisi", "strukturorganisasi"));
+        $rencanastrategis = RencanaStrategis::all();
+        return view("dashboard.kelola-halaman.tentang-kami", compact("profil", "visimisi", "strukturorganisasi", "rencanastrategis"));
     }
 
     public function editProfil(Request $request)
@@ -55,5 +57,39 @@ class TentangKamiController extends Controller
         $struktur->save();
         $request->file("file_strukturorganisasi")->storeAs("public/strukturorganisasi", $request->file("file_strukturorganisasi")->getClientOriginalName());
         return redirect()->back()->with("pesan", "ubah");
+    }
+
+    public function tambahRencanaStrategis(Request $request)
+    {
+        $rencana = new RencanaStrategis();
+        $rencana->user_id = Auth::user()->id;
+        $rencana->nama = $request->nama;
+        $rencana->file = $request->file("file_rencanastrategis")->getClientOriginalName();
+        $rencana->save();
+        $request->file("file_rencanastrategis")->storeAs("public/renstra", $request->file("file_rencanastrategis")->getClientOriginalName());
+        return redirect()->back()->with("pesan", "tambah");
+    }
+
+    public function ubahRencanaStrategis(Request $request)
+    {
+        $rencana = RencanaStrategis::find($request->id);
+        $rencana->user_id = Auth::user()->id;
+        $rencana->nama = $request->nama;
+        if ($request->file("file_rencanastrategis") == null) {
+            $rencana->file = $request->file;
+            $rencana->save();
+            return redirect()->back()->with("pesan", "ubah");
+        }
+        $rencana->file = $request->file("file_rencanastrategis")->getClientOriginalName();
+        $rencana->save();
+        $request->file("file_rencanastrategis")->storeAs("public/renstra", $request->file("file_rencanastrategis")->getClientOriginalName());
+        return redirect()->back()->with("pesan", "ubah");
+    }
+
+    public function hapusRencanaStrategis(Request $request)
+    {
+        $rencana = RencanaStrategis::find($request->id);
+        $rencana->delete();
+        return redirect()->back()->with("pesan", "hapus");
     }
 }

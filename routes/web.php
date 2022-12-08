@@ -73,6 +73,9 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/tentang-kami/profil', [TentangKamiController::class, 'editProfil']);
   Route::post('/kelola-halaman/tentang-kami/visi-misi', [TentangKamiController::class, 'editVisiMisi']);
   Route::post('/kelola-halaman/tentang-kami/struktur-organisasi', [TentangKamiController::class, 'editStrukturOrganisasi']);
+  Route::post('/kelola-halaman/tentang-kami/renstra/tambah', [TentangKamiController::class, 'tambahRencanaStrategis']);
+  Route::post('/kelola-halaman/tentang-kami/renstra/ubah', [TentangKamiController::class, 'ubahRencanaStrategis']);
+  Route::post('/kelola-halaman/tentang-kami/renstra/hapus', [TentangKamiController::class, 'hapusRencanaStrategis']);
 
 
   // Route::prefix('kelola-halaman')->group(function () {
