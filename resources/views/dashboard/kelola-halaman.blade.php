@@ -27,7 +27,7 @@
                     <tr>
                       <td>{{ $dt->judul }}</td>
                       <td><a href="{{ $dt->url }}" target="_blank">{{ $dt->url }} <i class="fa fa-external-link"></i></a></td>
-                      <td><a href="/kelola-halaman/{{ $dt->id }}" class="btn btn-outline-primary">Kelola <i class="fa fa-wrench"></i></a></td>
+                      <td><a href="/dashboard/kelola-halaman{{ $dt->url }}" class="btn btn-outline-primary">Kelola <i class="fa fa-wrench"></i></a></td>
                     </tr>
                     @endforeach
                   </tbody>

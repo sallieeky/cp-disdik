@@ -81,4 +81,9 @@ class DashboardController extends Controller
         $data = Halaman::all();
         return view("dashboard.kelola-halaman", compact("data"));
     }
+
+    public function kelolaHalamanDetail(Halaman $halaman)
+    {
+        return view("dashboard.kelola-halaman-detail", compact("halaman"));
+    }
 }

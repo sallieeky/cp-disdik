@@ -6,8 +6,6 @@ use App\Http\Controllers\ExternalLinkController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PenghargaanController;
-use App\Http\Controllers\PpidController;
-use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RegulasiController;
 use App\Http\Controllers\TentangKamiController;
 use Illuminate\Http\Request;
@@ -70,6 +68,11 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/external-link/hapus', [ExternalLinkController::class, 'hapus']);
 
   Route::get('/kelola-halaman', [DashboardController::class, 'kelolaHalaman']);
+  // Route::get('/kelola-halaman/{halaman}', [DashboardController::class, 'kelolaHalamanDetail']);
+  Route::get('/kelola-halaman/tentang-kami', [TentangKamiController::class, 'index']);
+  Route::post('/kelola-halaman/tentang-kami/profil', [TentangKamiController::class, 'editProfil']);
+  Route::post('/kelola-halaman/tentang-kami/visi-misi', [TentangKamiController::class, 'editVisiMisi']);
+  Route::post('/kelola-halaman/tentang-kami/struktur-organisasi', [TentangKamiController::class, 'editStrukturOrganisasi']);
 
 
   // Route::prefix('kelola-halaman')->group(function () {

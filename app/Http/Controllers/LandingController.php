@@ -28,7 +28,10 @@ class LandingController extends Controller
 
     public function tentangKami()
     {
-        return view("tentang-kami");
+        $profil = Umum::where("nama", "profil")->first();
+        $visimisi = Umum::where("nama", "visimisi")->first();
+        $strukturorganisasi = Umum::where("nama", "strukturorganisasi")->first();
+        return view("tentang-kami", compact("profil", "visimisi", "strukturorganisasi"));
     }
 
     public function visiMisi()

@@ -31,16 +31,7 @@
                     <span class="h5">Profil Dinas</span>
                 </div>
                 <div class="accordion__content">
-                    <p>
-                        Profil Pendidikan Kota Balikpapan merupakan suatu model dalam menyusun profil pendidikan yang memberikan informasi tentang statistik pendidikan di Kota Balikpapan secara umum. Profil ini mencakup berbagai jenjang, jenis dan jalur pendidikan yang meliputi antara lain jumlah sekolah, tenaga pendidik dan kependidikan, peserta didik, sumber pembiayaan, angka partisipasi sekolah, angka mengulang, angka melanjutkan, jumlah putus sekolah, tahun siswa terbuang, jumlah keluaran dan masih banyak lagi.
-        
-                    </p>
-                    <p>
-                        Data yang digunakan untuk menyusun profil pendidikan ini terdiri data tahunan yang berasal dari Bagian Pengembangan Data dan Jaringan Kependidikan (PDJK) Dinas Pendidikan Kota Balikpapan, Badan Pusat Statistik Kota Balikpapan dan Dinas Kependudukan dan Catatan Sipil Kota Balikpapan. 
-                    </p>
-                    <p>
-                        Profil Pendidikan Kota Balikpapan diupdate setiap tahun. Data beberapa tahun terakhir dapat dilihat pada dokumen-dokumen di bawah ini.
-                    </p>
+                    {!! $profil->nilai !!}
                 </div>
             </li>
             <li>
@@ -48,7 +39,7 @@
                     <span class="h5">Visi dan Misi</span>
                 </div>
                 <div class="accordion__content">
-                    <img src="/storage/visimisitujuan/visi_misi.jpg" class="img" alt="Visi dan Misi">
+                    <img src="/storage/visimisitujuan/{{ $visimisi->nilai }}" class="img" alt="Visi dan Misi">
                 </div>
             </li>
             <li>
@@ -56,7 +47,20 @@
                     <span class="h5">Struktur Organisasi</span>
                 </div>
                 <div class="accordion__content">
-                    <img src="/storage/strukturorganisasi/Struktur_3.png" class="img" alt="Visi dan Misi">
+                    <img src="/storage/strukturorganisasi/{{ $strukturorganisasi->nilai }}" class="img" alt="Visi dan Misi">
+                </div>
+            </li>
+            <li>
+                <div class="accordion__title">
+                    <span class="h5">Rencana Strategis</span>
+                </div>
+                <div class="accordion__content">
+                    <div class="container">
+                        <ul>
+                            <li><a href="#" class="w-100 d-inline-block"><i class="fa fa-file-pdf"></i> Ajdaiwdjawoidi jioawdi </a></li>
+                            <li><a href="#" class="w-100 d-inline-block"><i class="fa fa-file-pdf"></i> Ajdaiwdjawoidi jioawdi </a></li>
+                        </ul>
+                    </div>
                 </div>
             </li>
         </ul>

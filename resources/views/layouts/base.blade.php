@@ -69,7 +69,7 @@
             <nav id="menu1" class="bar bar--lg bar-1 hidden-xs hidden-sm py-3 px-3">
                 <div class="">
                     <div class="row align-items-center justify-content-between">
-                        <div class="col-lg-3 col-md-2 hidden-sm" style="font-size:1.5rem">
+                        <div class="col-lg-2 col-md-2 hidden-sm" style="font-size:1.5rem">
                             <div class="bar__module">
                                 <a href="/" style="color: #1D1D1D; text-decoration:none">
                                     Disdikbud <span class="text-primary">Balikpapan</span>
@@ -79,7 +79,7 @@
                             </div>
                             <!--end module-->
                         </div>
-                        <div class="col-lg-7 col-md-8 text-center hidden-sm text-left-xs text-left-sm">
+                        <div class="col-lg-8 col-md-8 text-center hidden-sm text-left-xs text-left-sm">
                             <ul class="menu-horizontal text-left" style="top: 0">
                                 <li class="dropdown">
                                     <a href="/" style="color: #1D1D1D">Beranda</a>
