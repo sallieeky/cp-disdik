@@ -34,11 +34,11 @@ Route::post('/tes2', function (Request $request) {
   return $request;
 });
 Route::get('/tentang-kami', [LandingController::class, 'tentangKami']);
-Route::get('/profil', [LandingController::class, 'profil']);
-Route::get('/visi-misi-tujuan', [LandingController::class, 'visiMisi']);
-Route::get('/struktur-organisasi', [LandingController::class, 'strukturOrganisasi']);
-Route::get('/tugas-dan-fungsi', [LandingController::class, 'tugasFungsi']);
-Route::get('/rencana-strategis', [LandingController::class, 'rencanaStrategis']);
+// Route::get('/profil', [LandingController::class, 'profil']);
+// Route::get('/visi-misi-tujuan', [LandingController::class, 'visiMisi']);
+// Route::get('/struktur-organisasi', [LandingController::class, 'strukturOrganisasi']);
+// Route::get('/tugas-dan-fungsi', [LandingController::class, 'tugasFungsi']);
+// Route::get('/rencana-strategis', [LandingController::class, 'rencanaStrategis']);
 Route::get('/berita', [LandingController::class, 'berita']);
 Route::get('/berita/detail/{id}', [LandingController::class, 'beritaDetail']);
 Route::get('/pengumuman', [LandingController::class, 'pengumuman']);
@@ -77,6 +77,15 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/tentang-kami/renstra/ubah', [TentangKamiController::class, 'ubahRencanaStrategis']);
   Route::post('/kelola-halaman/tentang-kami/renstra/hapus', [TentangKamiController::class, 'hapusRencanaStrategis']);
 
+  Route::get('/kelola-halaman/berita', [InformasiController::class, 'berita']);
+  Route::post('/kelola-halaman/berita/tambah', [InformasiController::class, 'tambahBerita']);
+  Route::post('/kelola-halaman/berita/ubah', [InformasiController::class, 'ubahBerita']);
+  Route::post('/kelola-halaman/berita/hapus', [InformasiController::class, 'hapusBerita']);
+
+  Route::get('/kelola-halaman/pengumuman', [InformasiController::class, 'pengumuman']);
+  Route::post('/kelola-halaman/pengumuman/tambah', [InformasiController::class, 'tambahPengumuman']);
+  Route::post('/kelola-halaman/pengumuman/ubah', [InformasiController::class, 'ubahPengumuman']);
+  Route::post('/kelola-halaman/pengumuman/hapus', [InformasiController::class, 'hapusPengumuman']);
 
   // Route::prefix('kelola-halaman')->group(function () {
   //   Route::get('/', [DashboardController::class, 'kelolaHalaman']);
@@ -93,8 +102,7 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   //   Route::get('/tugas-dan-fungsi', [TentangKamiController::class, 'tugasDanFungsi']);
   //   Route::get('/rencana-strategis', [TentangKamiController::class, 'rencanaStrategis']);
 
-  //   Route::get('/berita', [InformasiController::class, 'berita']);
-  //   Route::get('/pengumuman', [InformasiController::class, 'pengumuman']);
+
 
   //   Route::get('/regulasi', [RegulasiController::class, 'index']);
   //   Route::get('/ppid', [PpidController::class, 'index']);

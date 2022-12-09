@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ExternalLink;
+use App\Models\Informasi;
 use App\Models\RencanaStrategis;
 use App\Models\Slider;
 use App\Models\Umum;
@@ -53,7 +54,8 @@ class LandingController extends Controller
 
     public function berita()
     {
-        return view("berita");
+        $berita = Informasi::where("kategori", "berita")->paginate(6);
+        return view("berita", compact("berita"));
     }
     public function beritaDetail($id)
     {

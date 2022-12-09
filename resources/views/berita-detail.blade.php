@@ -5,13 +5,12 @@
     {{-- HEADER --}}
     <section class="cover height-30 imagebg" id="home" style="
             background-blend-mode: multiply;
-            background-image: url(/img/beranda-hero.jpg);
             background-color: #003049;
             background-repeat: no-repeat;
             background-size: 100%;
             object-fit: cover;
     ">
-        <div class="container pos-vertical-center">
+        <div class="container pos-vertical-center text-center">
             <p style="font-weight: 600; font-size: 2.3em">
                 Berita Dinas Pendidikan Kota Balikpapan
             </p>
@@ -20,17 +19,11 @@
     </section>
 
     <section class="bar bar-3 bar--sm bg--secondary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="bar__module">
-                        <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
-                    </div>
-                </div>
+        <div class="px-3">
+            <div class="bar__module">
+                <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
             </div>
-            <!--end of row-->
         </div>
-        <!--end of container-->
     </section>
     {{-- END HEADER --}}
 

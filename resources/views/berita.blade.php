@@ -5,7 +5,6 @@
     {{-- HEADER --}}
     <section class="cover height-30 imagebg" id="home" style="
             background-blend-mode: multiply;
-            background-image: url(/img/beranda-hero.jpg);
             background-color: #003049;
             background-repeat: no-repeat;
             background-size: 100%;
@@ -20,133 +19,47 @@
     </section>
 
     <section class="bar bar-3 bar--sm bg--secondary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="bar__module">
-                        <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
-                    </div>
-                </div>
+        <div class="px-3">
+            <div class="bar__module">
+                <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
             </div>
-            <!--end of row-->
         </div>
-        <!--end of container-->
     </section>
     {{-- END HEADER --}}
 
     <section class="space--sm py-3">
-      <div class="container">
-          <div class="row">
+          <div class="row mx-1">
               <div class="col-md-12 col-lg-8">
                   <div class="masonry">
                       <div class="masonry__container row">
+                        @foreach ($berita as $dt)
                           <div class="masonry__item col-md-6" data-masonry-filter="Marketing">
                               <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-2.jpg" />
+                                  <a href="/berita/detail/1" class="block text-center bg--primary">
+                                      <img alt="Image" src="/storage/informasi/{{ $dt->gambar }}" />
                                   </a>
                                   <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>A day in the life of a professional fitness blogger</h5>
+                                    <span>{{ date('l, d F Y', strtotime($dt->created_at)) }}</span>
+                                      <h5>{{ $dt->judul }}</h5>
                                       <a href="/berita/detail/1">
                                           Read More
                                       </a>
                                   </div>
                               </article>
                           </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Marketing">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-3.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Small businesses that expertly leverage their online followings</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Design">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-4.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Designing efficiently in the age of distraction</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Inspiration">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-5.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Assembling an attractive workspace for creativity</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Inspiration">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-6.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Our Favourite Things Q1 2016</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
-                          <div class="masonry__item col-md-6" data-masonry-filter="Design">
-                              <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block">
-                                      <img alt="Image" src="/template/img/blog-1.jpg" />
-                                  </a>
-                                  <div class="feature__body boxed boxed--border">
-                                      <span>May 25th 2016</span>
-                                      <h5>Stack designer Marc Ruben offers freelancing advice</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
-                                      </a>
-                                  </div>
-                              </article>
-                          </div>
-                          <!--end item-->
+                        @endforeach
                       </div>
                       <!--end of masonry container-->
                       <div class="pagination">
-                          <a class="pagination__prev" href="#" title="Previous Page">&laquo;</a>
+                          <a class="pagination__prev" title="Previous Page" href="{{ $berita->previousPageUrl() }}">&laquo;</a>
                           <ol>
-                              <li>
-                                  <a href="#">1</a>
+                            @for ($i = 1; $i <= $berita->lastPage(); $i++)
+                              <li class="{{ ($berita->currentPage() == $i) ? ' pagination__current' : '' }}">
+                                  <a href="{{ $berita->url($i) }}">{{ $i }}</a>
                               </li>
-                              <li>
-                                  <a href="#">2</a>
-                              </li>
-                              <li class="pagination__current">3</li>
-                              <li>
-                                  <a href="#">4</a>
-                              </li>
+                            @endfor
                           </ol>
-                          <a class="pagination__next" href="#" title="Next Page">&raquo;</a>
+                          <a class="pagination__next" title="Next Page" href="{{ $berita->nextPageUrl() }}">&raquo;</a>
                       </div>
                   </div>
                   <!--end masonry-->
@@ -236,70 +149,5 @@
                   </div>
               </div>
           </div>
-          <!--end of row-->
-      </div>
-      <!--end of container-->
     </section>
-
-    {{-- FOOTER --}}
-    {{-- <section class="elements-title space--xxs text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h6 class="type--uppercase">INFO LINK</h6>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col">
-                    <div class="slider slider--inline-arrows slider--arrows-hover text-center">
-                        <ul class="slides">
-                            <li class="col-md-3 col-6">
-                                <a href="#">
-                                    <img alt="Image" class="image--md" src="/img/info-link/BOS_Sekolah.jpg" />
-                                </a>
-                            </li>
-                            <li class="col-md-3 col-6">
-                                <a href="#">
-                                    <img alt="Image" class="image--md" src="/img/info-link/DATA.jpg" />
-                                </a>
-                            </li>
-                            <li class="col-md-3 col-6">
-                                <a href="#">
-                                    <img alt="Image" class="image--md" src="/img/info-link/INFO_KUIS_KIHAJAR.jpg" />
-                                </a>
-                            </li>
-                            <li class="col-md-3 col-6">
-                                <a href="#">
-                                    <img alt="Image" class="image--md" src="/img/info-link/LHKPN.png" />
-                                </a>
-                            </li>
-                            <li class="col-md-3 col-6">
-                                <a href="#">
-                                    <img alt="Image" class="image--md" src="/img/info-link/ppdb20201.jpg" />
-                                </a>
-                            </li>
-                            <li class="col-md-3 col-6">
-                                <a href="#">
-                                    <img alt="Image" class="image--md" src="/img/info-link/SIRUP2.png" />
-                                </a>
-                            </li>
-                            <li class="col-md-3 col-6">
-                                <a href="#">
-                                    <img alt="Image" class="image--md" src="/img/info-link/sp4nLapor.jpg" />
-                                </a>
-                            </li>
-                            <li class="col-md-3 col-6">
-                                <a href="#">
-                                    <img alt="Image" class="image--md" src="/img/info-link/whistle_blower.jpg" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--end of col-->
-            </div>
-            <!--end of row-->
-        </div>
-        <!--end of container-->
-    </section> --}}
 @endsection
