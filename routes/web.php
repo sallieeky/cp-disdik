@@ -78,6 +78,11 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/regulasi/ubah', [RegulasiController::class, 'ubahRegulasi']);
   Route::post('/kelola-halaman/regulasi/hapus', [RegulasiController::class, 'hapusRegulasi']);
 
+  Route::get('/kelola-halaman/penghargaan', [PenghargaanController::class, 'index']);
+  Route::post('/kelola-halaman/penghargaan/tambah', [PenghargaanController::class, 'tambahPenghargaan']);
+  Route::post('/kelola-halaman/penghargaan/ubah', [PenghargaanController::class, 'ubahPenghargaan']);
+  Route::post('/kelola-halaman/penghargaan/hapus', [PenghargaanController::class, 'hapusPenghargaan']);
+
 
   // Route::prefix('kelola-halaman')->group(function () {
   //   Route::get('/', [DashboardController::class, 'kelolaHalaman']);

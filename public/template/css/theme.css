@@ -5756,7 +5756,7 @@ body.dropdowns--hover .nav-sidebar-column .dropdown:hover > .dropdown__container
   border: 1px solid #ececec;
 }
 .card-2 .card__body {
-  border-bottom: none;
+  /* border-bottom: none; */
   border-top: none;
 }
 .card-2 .card__bottom {
