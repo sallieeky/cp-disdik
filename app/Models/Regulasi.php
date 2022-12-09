@@ -12,6 +12,6 @@ class Regulasi extends Model
 
     public function jenis()
     {
-        return $this->belongsTo(JenisRegulasi::class);
+        return $this->belongsTo(JenisRegulasi::class, "jenis_regulasi_id");
     }
 }

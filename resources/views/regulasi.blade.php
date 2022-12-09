@@ -48,6 +48,7 @@
               <div class="tabs-container tabs--vertical">
                 <ul class="tabs">
                   @foreach ($jenisRegulasi as $jr)
+                    @if($jr->regulasi->count() > 0)
                     <li class="@if($loop->iteration == 1) active @endif">
                         <div class="tab__title">
                             <span class="h5">{{ $jr->nama }}</span>
@@ -60,7 +61,8 @@
                           </ol>
                         </div>
                     </li>
-                    @endforeach
+                    @endif
+                  @endforeach
                 </ul>
               </div>
           </div>

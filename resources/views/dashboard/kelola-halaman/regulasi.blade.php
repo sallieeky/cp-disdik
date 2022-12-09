@@ -17,21 +17,26 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">Judul<span class="text-danger">*</span></label>
+                  <label class="col-sm-3 col-form-label">Nama<span class="text-danger">*</span></label>
                   <div class="col-sm-9">
-                    <input class="form-control" type="text" name="judul" placeholder="Judul Berita" required>
+                    <input class="form-control" type="text" name="nama" placeholder="Nama Regulasi" required>
                   </div>
                 </div>
                 <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">Gambar<span class="text-danger">*</span></label>
+                  <label class="col-sm-3 col-form-label">Jenis Regulasi<span class="text-danger">*</span></label>
                   <div class="col-sm-9">
-                    <input class="form-control" type="file" name="file_gambar" accept=".jpg, .jpeg, .png" required>
+                    <input class="form-control" list="jenisRegulasiList" id="exampleDataList" placeholder="Jenis Regulasi" name="jenis_regulasi" required>
+                    <datalist id="jenisRegulasiList">
+                      @foreach ($jenisRegulasi as $jr)
+                        <option value="{{ $jr->nama }}">
+                      @endforeach
+                    </datalist>
                   </div>
                 </div>
                 <div class="mb-3 row">
-                  <label class="col-sm-3 col-form-label">Deskripsi<span class="text-danger">*</span></label>
+                  <label class="col-sm-3 col-form-label">File<span class="text-danger">*</span></label>
                   <div class="col-sm-9">
-                    <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="20" placeholder="Deskripsi Berita" required></textarea>
+                    <input class="form-control" type="file" name="file_file" accept="*" required>
                   </div>
                 </div>
                 <button type="submit" id="bootstrap-notify-gen-btn" class="btn btn-primary w-100">Tambah</button>
@@ -45,24 +50,30 @@
                 <table class="display" id="tabel-1">
                   <thead>
                     <tr>
-                      <th>Judul</th>
-                      <th>Gambar</th>
-                      <th>Deskripsi</th>
+                      <th>Nama</th>
+                      <th>Jenis Regulasi</th>
+                      <th>File</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($regulasi as $dt)
                     <tr>
-                      <td>awdjajiodawjoi</td>
+                      <td>{{ $dt->nama }}</td>
+                      <td>{{ $dt->jenis->nama }}</td>
+                      <td><a href="/storage/regulasi/{{ $dt->file }}" target="_blank" class="btn btn-primary">
+                          <i class="fa fa-download"></i>
+                      </a></td>
                       <td>
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ubah-modal-{{ "id" }}">
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ubah-modal-{{ $dt->id }}">
                           <i class="fa fa-pencil-square-o"></i>
                         </button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus-modal-{{ "id" }}">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus-modal-{{ $dt->id }}">
                           <i class="fa fa-trash-o"></i>
                         </button>
                       </td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -75,7 +86,7 @@
   </div>
 </div>
 
-{{-- @foreach ($berita as $dt)
+@foreach ($regulasi as $dt)
 <!-- Ubah Modal -->
 <div class="modal fade" id="ubah-modal-{{ $dt->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -85,26 +96,31 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/dashboard/kelola-halaman/berita/ubah" method="post" enctype="multipart/form-data">
+        <form action="/dashboard/kelola-halaman/regulasi/ubah" method="post" enctype="multipart/form-data">
           @csrf
           <div class="row">
             <div class="col-md-12">
               <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Judul<span class="text-danger">*</span></label>
+                <label class="col-sm-3 col-form-label">Nama<span class="text-danger">*</span></label>
                 <div class="col-sm-9">
-                  <input class="form-control" type="text" name="judul" placeholder="Judul Berita" required value="{{ $dt->judul }}">
+                  <input class="form-control" type="text" name="nama" placeholder="Nama Regulasi" required value="{{ $dt->nama }}">
                 </div>
               </div>
               <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Gambar<span class="text-danger">*</span></label>
+                <label class="col-sm-3 col-form-label">Jenis Regulasi<span class="text-danger">*</span></label>
                 <div class="col-sm-9">
-                  <input class="form-control" type="file" name="file_gambar" accept=".jpg, .jpeg, .png">
+                  <input class="form-control" list="jenisRegulasiList" id="exampleDataList" required placeholder="Jenis Regulasi" name="jenis_regulasi" value="{{ $dt->jenis->nama }}">
+                  <datalist id="jenisRegulasiList">
+                    @foreach ($jenisRegulasi as $jr)
+                      <option value="{{ $jr->nama }}">
+                    @endforeach
+                  </datalist>
                 </div>
               </div>
               <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Deskripsi<span class="text-danger">*</span></label>
+                <label class="col-sm-3 col-form-label">File<span class="text-danger">*</span></label>
                 <div class="col-sm-9">
-                  <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="20" placeholder="Deskripsi Berita" required>{!! str_replace('<br />', '', $dt->deskripsi) !!}</textarea>
+                  <input class="form-control" type="file" name="file_file" accept="*">
                 </div>
               </div>
             </div>
@@ -135,7 +151,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <form action="/dashboard/kelola-halaman/berita/hapus" method="post" enctype="multipart/form-data">
+        <form action="/dashboard/kelola-halaman/regulasi/hapus" method="post" enctype="multipart/form-data">
           @csrf
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
           <button type="submit" name="id" value="{{ $dt->id }}" class="btn btn-danger">Hapus</button>
@@ -144,7 +160,7 @@
     </div>
   </div>
 </div>
-@endforeach --}}
+@endforeach
 
 @endsection
 
