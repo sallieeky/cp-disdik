@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ExternalLink;
 use App\Models\Informasi;
 use App\Models\JenisRegulasi;
+use App\Models\Penghargaan;
 use App\Models\Regulasi;
 use App\Models\RencanaStrategis;
 use App\Models\Slider;
@@ -95,6 +96,7 @@ class LandingController extends Controller
 
     public function penghargaan()
     {
-        return view("penghargaan");
+        $penghargaan = Penghargaan::all();
+        return view("penghargaan", compact("penghargaan"));
     }
 }

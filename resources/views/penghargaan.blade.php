@@ -16,39 +16,38 @@
         </div>
         <!--end of container-->
     </section>
-    <section class="bar bar-3 bar--sm bg--secondary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="bar__module">
-                        <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
-                    </div>
-                </div>
-            </div>
-            <!--end of row-->
+    <section class="bar bar-3 bar--sm bg--secondary px-3">
+        <div class="bar__module">
+            <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
         </div>
-        <!--end of container-->
     </section>
     {{-- END HEADER --}}
 
-    <section class="py-3">
-        <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="card card-2 text-center">
-                    <div class="card__top">
-                        <a href="/storage/penghargaan/Penghargaan_1.jpeg" data-lightbox="true">
-                            <img alt="Image" src="/storage/penghargaan/Penghargaan_1.jpeg">
-                        </a>
+    <section class="p-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="masonry">
+                    <div class="masonry__container row">
+                        @foreach ($penghargaan as $dt)
+                        <div class="masonry__item col-md-3" data-masonry-filter="Marketing">
+                            <div class="card card-2 text-center">
+                                <div class="card__top">
+                                    <a href="/storage/penghargaan/{{ $dt->gambar }}" data-lightbox="true">
+                                        <img alt="Image" src="/storage/penghargaan/{{ $dt->gambar }}">
+                                    </a>
+                                </div>
+                                <div class="card__body">
+                                    <h4 class="type--bold">{{ $dt->nama }}</h4>
+                                    <p>
+                                        {{ date('l, d F Y', strtotime($dt->created_at)) }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
-                    <div class="card__body">
-                        <h4 class="type--bold">Penghargaan dari Gubernur Kalimantan Timur Terbaik I (satu) Bidang Kedudayaan Kota Dalam rangka HUT ke 62 Provinsi Kalimantan Timur</h4>
-                        <p>
-                          9 Januari 2020
-                        </p>
-                    </div>
+                    <!--end of masonry container-->
                 </div>
-              </div>
             </div>
         </div>
     </section>

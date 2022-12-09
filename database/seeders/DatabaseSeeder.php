@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ExternalLinkSeeder::class);
         $this->call(HalamanSeeder::class);
         $this->call(RegulasiSeeder::class);
+        $this->call(PenghargaanSeeder::class);
     }
 }
