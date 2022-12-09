@@ -87,47 +87,6 @@
                                 <li class="dropdown">
                                     <a href="/tentang-kami" style="color: #1D1D1D">Tentang Kami</a>
                                 </li>
-                                {{-- <li class="dropdown">
-                                    <span class="dropdown__trigger">Tentang Kami</span>
-                                    <div class="dropdown__container">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="dropdown__content col-lg-2 col-md-4">
-                                                    <ul class="menu-vertical">
-                                                        <li>
-                                                            <a href="/profil">
-                                                                Profil
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/visi-misi-tujuan">
-                                                                Visi, Misi, dan Tujuan
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/struktur-organisasi">
-                                                                Struktur Organisasi
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/tugas-dan-fungsi">
-                                                                Tugas dan Fungsi
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                Rencana Strategis
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <!--end dropdown content-->
-                                            </div>
-                                            <!--end row-->
-                                        </div>
-                                    </div>
-                                    <!--end dropdown container-->
-                                </li> --}}
                                 <li class="dropdown">
                                     <span class="dropdown__trigger">Informasi</span>
                                     <div class="dropdown__container">
@@ -157,47 +116,6 @@
                                 <li class="dropdown">
                                     <a href="/regulasi">Regulasi</a>
                                 </li>
-                                {{-- <li class="dropdown">
-                                    <span class="dropdown__trigger">Regulasi</span>
-                                    <div class="dropdown__container">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="dropdown__content col-lg-3 col-md-4">
-                                                    <ul class="menu-vertical">
-                                                        <li class="">
-                                                            <a href="#">
-                                                                Regulasi Undang-undang
-                                                            </a>
-                                                        </li>
-                                                        <li class="">
-                                                            <a href="#">
-                                                                Regulasi Peraturan Pemerintah
-                                                            </a>
-                                                        </li>
-                                                        <li class="">
-                                                            <a href="#">
-                                                                Regulasi Peraturan Menteri
-                                                            </a>
-                                                        </li>
-                                                        <li class="">
-                                                            <a href="#">
-                                                                Regulasi Peraturan Daerah
-                                                            </a>
-                                                        </li>
-                                                        <li class="">
-                                                            <a href="#">
-                                                                Regulasi Peraturan Walikota
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <!--end dropdown content-->
-                                            </div>
-                                            <!--end row-->
-                                        </div>
-                                    </div>
-                                    <!--end dropdown container-->
-                                </li> --}}
                                 <li class="dropdown">
                                     <a href="/ppid">PPID</a>
                                 </li>
@@ -228,6 +146,9 @@
                                     <!--end dropdown container-->
                                 </li> --}}
                                 <li class="dropdown">
+                                    <a href="/anggaran" style="color: #1D1D1D">Anggaran</a>
+                                </li>
+                                {{-- <li class="dropdown">
                                     <span class="dropdown__trigger">Anggaran</span>
                                     <div class="dropdown__container">
                                         <div class="container">
@@ -252,14 +173,14 @@
                                         </div>
                                     </div>
                                     <!--end dropdown container-->
-                                </li>
+                                </li> --}}
                                 <li class="dropdown">
                                     <a href="/penghargaan">Penghargaan</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-2 col-md-2 text-right">
-                            <a href="#" style="background-color: #007BFF; padding: 8px 2em; border-radius: 16px; color:#FEFEFE; text-decoration:none">Kontak Kami</a>
+                            <a href="/kontak-kami" style="background-color: #007BFF; padding: 8px 2em; border-radius: 16px; color:#FEFEFE; text-decoration:none">Kontak Kami</a>
                         </div>
                     </div>
                     <!--end of row-->
@@ -360,30 +281,6 @@
                                 <span class="type--fine-print">
                                     &copy; <span class="update-year"></span> Dinas Pendidikan dan Kebudayaan Kota Balikpapan &mdash; Bidang Pengembangan Data & Jaringan Kependidikan</span>
                             </div>
-                            {{-- <div class="col-md-6 text-right text-center-xs">
-                                <ul class="social-list list-inline">
-                                    <li>
-                                        <a href="#">
-                                            <i class="socicon socicon-google icon icon--xs"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="socicon socicon-twitter icon icon--xs"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="socicon socicon-facebook icon icon--xs"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="socicon socicon-instagram icon icon--xs"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div> --}}
                         </div>
                         <!--end of row-->
                     </div>

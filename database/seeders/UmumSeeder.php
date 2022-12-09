@@ -36,5 +36,30 @@ class UmumSeeder extends Seeder
             "nama" => "strukturorganisasi",
             "nilai" => "Struktur_3.png"
         ]);
+
+        Umum::create([
+            "nama" => "Alamat",
+            "nilai" => "Jl. Ruhui Rahayu 1, Sepinggan, Kecamatan Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76115"
+        ]);
+
+        Umum::create([
+            "nama" => "Telepon",
+            "nilai" => "(0542) 888 888"
+        ]);
+
+        Umum::create([
+            "nama" => "Email",
+            "nilai" => "disdik@mail.com"
+        ]);
+
+        Umum::create([
+            "nama" => "Instagram",
+            "nilai" => "https://www.instagram.com/disdikbalikpapan"
+        ]);
+
+        Umum::create([
+            "nama" => "Facebook",
+            "nilai" => "https://www.facebook.com/disdikbalikpapan"
+        ]);
     }
 }

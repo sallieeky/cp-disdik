@@ -32,6 +32,7 @@ Route::get('/informasi/detail/{informasi}', [LandingController::class, 'informas
 Route::get('/regulasi', [LandingController::class, 'regulasi']);
 Route::get('/ppid', [LandingController::class, 'ppid']);
 Route::get('/penghargaan', [LandingController::class, 'penghargaan']);
+Route::get('/kontak-kami', [LandingController::class, 'kontak']);
 
 Route::get('/login', [DashboardController::class, 'login'])->middleware("guest")->name("login");
 Route::post('/login', [DashboardController::class, 'loginPost']);

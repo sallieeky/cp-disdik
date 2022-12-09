@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ExternalLink;
 use App\Models\Informasi;
 use App\Models\JenisRegulasi;
+use App\Models\Kontak;
 use App\Models\Penghargaan;
 use App\Models\Regulasi;
 use App\Models\RencanaStrategis;
@@ -38,21 +39,6 @@ class LandingController extends Controller
         $strukturorganisasi = Umum::where("nama", "strukturorganisasi")->first();
         $rencanastrategis = RencanaStrategis::all();
         return view("tentang-kami", compact("profil", "visimisi", "strukturorganisasi", "rencanastrategis"));
-    }
-
-    public function visiMisi()
-    {
-        return view("visi-misi-tujuan");
-    }
-
-    public function strukturOrganisasi()
-    {
-        return view('struktur-organisasi');
-    }
-
-    public function tugasFungsi()
-    {
-        return view('tugas-dan-fungsi');
     }
 
     public function berita(Request $request)
@@ -98,5 +84,14 @@ class LandingController extends Controller
     {
         $penghargaan = Penghargaan::all();
         return view("penghargaan", compact("penghargaan"));
+    }
+
+    public function kontak()
+    {
+        // get from Umum where nama = Alamat, Telepon, Email, Instagram, Facebook and nama as key and nilai as value
+        $kontak = Umum::whereIn("nama", ["Alamat", "Telepon", "Email", "Instagram", "Facebook"])->get()->keyBy("nama")->map(function ($item) {
+            return $item->nilai;
+        });
+        return view("kontak", compact("kontak"));
     }
 }
