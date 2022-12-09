@@ -19,43 +19,44 @@
     </section>
 
     <section class="bar bar-3 bar--sm bg--secondary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="bar__module">
-                        <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
-                    </div>
-                </div>
+        <div class="px-3">
+            <div class="bar__module">
+                <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
             </div>
-            <!--end of row-->
         </div>
-        <!--end of container-->
     </section>
     {{-- END HEADER --}}
 
     <section class="space--sm py-3">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12 col-lg-8">
-                  <div class="masonry">
-                      <div class="masonry__container row">
+        <div class="row mx-1">
+            <div class="col-md-12 col-lg-8">
+                <div class="masonry">
+                    <div class="masonry__container row">
                         <div class="masonry__item col-md-12">
-                            @for ($i=1; $i<=5; $i++)
+                            @if (count($pengumuman) == 0)
+                            <div class="col-md-12">
+                                <div class="alert alert-warning" role="alert">
+                                <h4 class="alert-heading">Data Kosong</h4>
+                                <p>Belum ada pengumuman yang di upload</p>
+                                </div>
+                            </div>
+                            @endif
+                            @foreach ($pengumuman as $dt)
                             <section class="space--xs blog-article-wide">
                                 <div class="container">
                                     <div class="row cta cta--horizontal text-center-xs">
                                         <div class="col-md-4">
-                                            <h4>24th February 2017</h4>
+                                            <h4>{{ date('d F Y', strtotime($dt->created_at)) }}</h4>
                                         </div>
                                         <div class="col-md-5">
                                             <p class="lead">
-                                                Building an enduring online audience
+                                                {{ $dt->judul }}
                                             </p>
                                         </div>
                                         <div class="col-md-3 text-right text-center-xs">
-                                            <a class="btn type--uppercase" href="/pengumuman/detail/1">
+                                            <a class="btn type--uppercase" href="/informasi/detail/{{ $dt->id }}">
                                                 <span class="btn__text">
-                                                    Read Article
+                                                    Baca selengkapnya
                                                 </span>
                                             </a>
                                         </div>
@@ -64,117 +65,47 @@
                                 </div>
                                 <!--end of container-->
                             </section>
-                            @endfor
+                            @endforeach
+                            @if (count($pengumuman) > 0)
                             <div class="pagination">
-                              <a class="pagination__prev" href="#" title="Previous Page">&laquo;</a>
-                              <ol>
-                                  <li>
-                                      <a href="#">1</a>
-                                  </li>
-                                  <li>
-                                      <a href="#">2</a>
-                                  </li>
-                                  <li class="pagination__current">3</li>
-                                  <li>
-                                      <a href="#">4</a>
-                                  </li>
-                              </ol>
-                              <a class="pagination__next" href="#" title="Next Page">&raquo;</a>
+                                <a class="pagination__prev" title="Previous Page" href="{{ $pengumuman->previousPageUrl() }}">&laquo;</a>
+                                <ol>
+                                @for ($i = 1; $i <= $pengumuman->lastPage(); $i++)
+                                    <li class="{{ ($pengumuman->currentPage() == $i) ? ' pagination__current' : '' }}">
+                                        <a href="{{ $pengumuman->url($i) }}">{{ $i }}</a>
+                                    </li>
+                                @endfor
+                                </ol>
+                                <a class="pagination__next" title="Next Page" href="{{ $pengumuman->nextPageUrl() }}">&raquo;</a>
                             </div>
+                            @endif
                         </div>
-                      </div>
-                  </div>
-                  <!--end masonry-->
-                  
-              </div>
-              <div class="col-lg-4 hidden-sm">
-                  <div class="mt-3 sidebar boxed boxed--border boxed--lg bg--secondary">
-                      <div class="sidebar__widget">
-                          <h5>Search site</h5>
-                          <form>
-                              <input type="text" name="query" placeholder="Type search here" />
-                          </form>
-                      </div>
-                      <!--end widget-->
-                      <div class="sidebar__widget">
-                          <h5>Text Widget</h5>
-                          <p>
-                              Our new digital products will take your workflow to all-new levels of high productivity. We know you'll find everything you need - and more! Start building with Stack.
-                          </p>
-                      </div>
-                      <!--end widget-->
-                      <div class="sidebar__widget">
-                          <h5>Tags</h5>
-                          <ul class="tag-cloud">
-                              <li>
-                                  <a href="#">Freelancing</a>
-                              </li>
-                              <li>
-                                  <a href="#">Design</a>
-                              </li>
-                              <li>
-                                  <a href="#">Small Business</a>
-                              </li>
-                              <li>
-                                  <a href="#">Entrepreneurship</a>
-                              </li>
-                              <li>
-                                  <a href="#">Marketing</a>
-                              </li>
-                              <li>
-                                  <a href="#">Inspiration</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <!--end widget-->
-                      <div class="sidebar__widget">
-                          <h5>Categories</h5>
-                          <ul>
-                              <li>
-                                  <a href="#">Freelancing</a>
-                              </li>
-                              <li>
-                                  <a href="#">Design</a>
-                              </li>
-                              <li>
-                                  <a href="#">Small Business</a>
-                              </li>
-                              <li>
-                                  <a href="#">Entrepreneurship</a>
-                              </li>
-                              <li>
-                                  <a href="#">Marketing</a>
-                              </li>
-                              <li>
-                                  <a href="#">Inspiration</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <!--end widget-->
-                      <div class="sidebar__widget">
-                          <h5>Archives</h5>
-                          <ul>
-                              <li>
-                                  <a href="#">August 2016</a>
-                              </li>
-                              <li>
-                                  <a href="#">July 2016</a>
-                              </li>
-                              <li>
-                                  <a href="#">June 2016</a>
-                              </li>
-                              <li>
-                                  <a href="#">May 2016</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <!--end widget-->
-                  </div>
-              </div>
-          </div>
-          <!--end of row-->
-      </div>
-      <!--end of container-->
+                    </div>
+                </div>
+                <!--end masonry-->
+                
+            </div>
+            <div class="col-lg-4 hidden-sm">
+                <div class="mt-3 sidebar boxed boxed--border boxed--lg bg--secondary">
+                    <div class="sidebar__widget">
+                        <h5>Cari Pengumuman</h5>
+                        <form method="GET" action="/pengumuman">
+                            <input type="text" name="cari" placeholder="Type search here" />
+                        </form>
+                    </div>
+                    <!--end widget-->
+                    <div class="sidebar__widget">
+                        <h5>Pengumuman Terbaru</h5>
+                        @foreach ($terbaru as $dt)
+                        <h6 class="py-0 my-0 text-decoration-none"><a href="/informasi/detail/{{ $dt->id }}">{{ $dt->judul }}</a></h6>
+                        <p>
+                          {{ str_replace('<br />', ' ', $dt->deskripsi) }}
+                        </p>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     {{-- FOOTER --}}

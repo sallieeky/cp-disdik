@@ -52,23 +52,31 @@ class LandingController extends Controller
         return view('tugas-dan-fungsi');
     }
 
-    public function berita()
+    public function berita(Request $request)
     {
-        $berita = Informasi::where("kategori", "berita")->paginate(6);
-        return view("berita", compact("berita"));
-    }
-    public function beritaDetail($id)
-    {
-        return view("berita-detail");
+        $berita = Informasi::where("kategori", "berita")
+            ->where("judul", "like", "%$request->cari%")
+            ->orderBy("created_at", "desc")
+            ->paginate(6);
+        $terbaru = Informasi::where("kategori", "berita")->orderBy("created_at", "desc")->take(3)->get();
+        return view("berita", compact("berita", "terbaru"));
     }
 
-    public function pengumuman()
+    public function pengumuman(Request $request)
     {
-        return view("pengumuman");
+        $pengumuman = Informasi::where("kategori", "pengumuman")
+            ->where("judul", "like", "%$request->cari%")
+            ->orderBy("created_at", "desc")
+            ->paginate(6);
+        $terbaru = Informasi::where("kategori", "pengumuman")->orderBy("created_at", "desc")->take(3)->get();
+        return view("pengumuman", compact("pengumuman", "terbaru"));
     }
-    public function pengumumanDetail($id)
+
+    public function informasiDetail(Informasi $informasi)
     {
-        return view("pengumuman-detail");
+        $terbaruBerita = Informasi::where("kategori", "berita")->orderBy("created_at", "desc")->take(3)->get();
+        $terbaruPengumuman = Informasi::where("kategori", "pengumuman")->orderBy("created_at", "desc")->take(3)->get();
+        return view("informasi-detail", compact("informasi", "terbaruBerita", "terbaruPengumuman"));
     }
 
     public function regulasi()

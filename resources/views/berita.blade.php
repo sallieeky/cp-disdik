@@ -32,17 +32,25 @@
               <div class="col-md-12 col-lg-8">
                   <div class="masonry">
                       <div class="masonry__container row">
+                        @if (count($berita) == 0)
+                          <div class="col-md-12">
+                            <div class="alert alert-warning" role="alert">
+                              <h4 class="alert-heading">Data Kosong</h4>
+                              <p>Belum ada berita yang di upload</p>
+                            </div>
+                          </div>
+                        @endif
                         @foreach ($berita as $dt)
                           <div class="masonry__item col-md-6" data-masonry-filter="Marketing">
                               <article class="feature feature-1">
-                                  <a href="/berita/detail/1" class="block text-center bg--primary">
+                                  <a href="/informasi/detail/{{ $dt->id }}" class="block text-center bg--primary">
                                       <img alt="Image" src="/storage/informasi/{{ $dt->gambar }}" />
                                   </a>
                                   <div class="feature__body boxed boxed--border">
                                     <span>{{ date('l, d F Y', strtotime($dt->created_at)) }}</span>
                                       <h5>{{ $dt->judul }}</h5>
-                                      <a href="/berita/detail/1">
-                                          Read More
+                                      <a href="/informasi/detail/{{ $dt->id }}">
+                                          Baca selengkapnya
                                       </a>
                                   </div>
                               </article>
@@ -50,6 +58,7 @@
                         @endforeach
                       </div>
                       <!--end of masonry container-->
+                      @if (count($berita) > 0)
                       <div class="pagination">
                           <a class="pagination__prev" title="Previous Page" href="{{ $berita->previousPageUrl() }}">&laquo;</a>
                           <ol>
@@ -61,91 +70,29 @@
                           </ol>
                           <a class="pagination__next" title="Next Page" href="{{ $berita->nextPageUrl() }}">&raquo;</a>
                       </div>
+                      @endif
                   </div>
                   <!--end masonry-->
               </div>
+
               <div class="col-lg-4 hidden-sm">
                   <div class="mt-3 sidebar boxed boxed--border boxed--lg bg--secondary">
                       <div class="sidebar__widget">
-                          <h5>Search site</h5>
-                          <form>
-                              <input type="text" name="query" placeholder="Type search here" />
+                          <h5>Cari Berita</h5>
+                          <form method="GET" action="/berita">
+                              <input type="text" name="cari" placeholder="Type search here" />
                           </form>
                       </div>
                       <!--end widget-->
                       <div class="sidebar__widget">
-                          <h5>Text Widget</h5>
+                          <h5>Berita Terbaru</h5>
+                          @foreach ($terbaru as $dt)
+                          <h6 class="py-0 my-0 text-decoration-none"><a href="/informasi/detail/{{ $dt->id }}">{{ $dt->judul }}</a></h6>
                           <p>
-                              Our new digital products will take your workflow to all-new levels of high productivity. We know you'll find everything you need - and more! Start building with Stack.
+                            {{ str_replace('<br />', ' ', $dt->deskripsi) }}
                           </p>
+                          @endforeach
                       </div>
-                      <!--end widget-->
-                      <div class="sidebar__widget">
-                          <h5>Tags</h5>
-                          <ul class="tag-cloud">
-                              <li>
-                                  <a href="#">Freelancing</a>
-                              </li>
-                              <li>
-                                  <a href="#">Design</a>
-                              </li>
-                              <li>
-                                  <a href="#">Small Business</a>
-                              </li>
-                              <li>
-                                  <a href="#">Entrepreneurship</a>
-                              </li>
-                              <li>
-                                  <a href="#">Marketing</a>
-                              </li>
-                              <li>
-                                  <a href="#">Inspiration</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <!--end widget-->
-                      <div class="sidebar__widget">
-                          <h5>Categories</h5>
-                          <ul>
-                              <li>
-                                  <a href="#">Freelancing</a>
-                              </li>
-                              <li>
-                                  <a href="#">Design</a>
-                              </li>
-                              <li>
-                                  <a href="#">Small Business</a>
-                              </li>
-                              <li>
-                                  <a href="#">Entrepreneurship</a>
-                              </li>
-                              <li>
-                                  <a href="#">Marketing</a>
-                              </li>
-                              <li>
-                                  <a href="#">Inspiration</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <!--end widget-->
-                      <div class="sidebar__widget">
-                          <h5>Archives</h5>
-                          <ul>
-                              <li>
-                                  <a href="#">August 2016</a>
-                              </li>
-                              <li>
-                                  <a href="#">July 2016</a>
-                              </li>
-                              <li>
-                                  <a href="#">June 2016</a>
-                              </li>
-                              <li>
-                                  <a href="#">May 2016</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <!--end widget-->
                   </div>
               </div>
           </div>

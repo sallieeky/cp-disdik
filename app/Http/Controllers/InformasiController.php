@@ -10,7 +10,46 @@ class InformasiController extends Controller
 {
     public function pengumuman()
     {
-        return view("dashboard.kelola-halaman.pengumuman");
+        $pengumuman = Informasi::where("kategori", "pengumuman")->get();
+        return view("dashboard.kelola-halaman.pengumuman", compact("pengumuman"));
+    }
+    public function tambahPengumuman(Request $request)
+    {
+        $berita = new Informasi();
+        $berita->user_id = Auth::user()->id;
+        $berita->judul = $request->judul;
+        $berita->kategori = "pengumuman";
+        $berita->deskripsi = nl2br($request->deskripsi);
+        $berita->gambar = $request->file("file_gambar")->getClientOriginalName();
+        $berita->save();
+
+        $request->file("file_gambar")->storeAs("public/informasi", $request->file("file_gambar")->getClientOriginalName());
+
+        return redirect()->back()->with("pesan", "tambah");
+    }
+
+    public function ubahPengumuman(Request $request)
+    {
+        $berita = Informasi::find($request->id);
+        $berita->user_id = Auth::user()->id;
+        $berita->judul = $request->judul;
+        $berita->kategori = "pengumuman";
+        $berita->deskripsi = nl2br($request->deskripsi);
+        if ($request->file("file_gambar")) {
+            $berita->gambar = $request->file("file_gambar")->getClientOriginalName();
+            $request->file("file_gambar")->storeAs("public/informasi", $request->file("file_gambar")->getClientOriginalName());
+        }
+        $berita->save();
+
+        return redirect()->back()->with("pesan", "ubah");
+    }
+
+    public function hapusPengumuman(Request $request)
+    {
+        $berita = Informasi::find($request->id);
+        $berita->delete();
+
+        return redirect()->back()->with("pesan", "hapus");
     }
 
     public function berita()
@@ -50,9 +89,9 @@ class InformasiController extends Controller
         return redirect()->back()->with("pesan", "ubah");
     }
 
-    public function hapusBerita($id)
+    public function hapusBerita(Request $request)
     {
-        $berita = Informasi::find($id);
+        $berita = Informasi::find($request->id);
         $berita->delete();
 
         return redirect()->back()->with("pesan", "hapus");

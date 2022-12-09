@@ -1,5 +1,5 @@
 @extends('layouts.dashboard-base')
-@section("title", "Kelola Halaman Berita")
+@section("title", "Kelola Halaman Pengumuman")
 @section("content")
 <div class="container-fluid">
   <div class="row">
@@ -7,11 +7,11 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header pb-0">
-          <h5>Kelola Berita</h5>
-          <span>Kelola berita Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>
+          <h5>Kelola Pengumuman</h5>
+          <span>Kelola pengumuman Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>
         </div>
         <div class="card-body">
-          <form action="/dashboard/kelola-halaman/berita/tambah" method="post" enctype="multipart/form-data">
+          <form action="/dashboard/kelola-halaman/pengumuman/tambah" method="post" enctype="multipart/form-data">
             @csrf
             <hr>
             <div class="row">
@@ -19,7 +19,7 @@
                 <div class="mb-3 row">
                   <label class="col-sm-3 col-form-label">Judul<span class="text-danger">*</span></label>
                   <div class="col-sm-9">
-                    <input class="form-control" type="text" name="judul" placeholder="Judul Berita" required>
+                    <input class="form-control" type="text" name="judul" placeholder="Judul Pengumuman" required>
                   </div>
                 </div>
                 <div class="mb-3 row">
@@ -31,7 +31,7 @@
                 <div class="mb-3 row">
                   <label class="col-sm-3 col-form-label">Deskripsi<span class="text-danger">*</span></label>
                   <div class="col-sm-9">
-                    <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="20" placeholder="Deskripsi Berita" required></textarea>
+                    <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="20" placeholder="Deskripsi Pengumuman" required></textarea>
                   </div>
                 </div>
                 <button type="submit" id="bootstrap-notify-gen-btn" class="btn btn-primary w-100">Tambah</button>
@@ -52,7 +52,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($berita as $dt)
+                    @foreach ($pengumuman as $dt)
                     <tr>
                       <td>{{ $dt->judul }}</td>
                       <td><img class="img" height="50" src="/storage/informasi/{{ $dt->gambar }}" alt="{{ $dt->judul }}"></td>
@@ -78,7 +78,7 @@
 
   </div>
 </div>
-@foreach ($berita as $dt)
+@foreach ($pengumuman as $dt)
 <!-- Ubah Modal -->
 <div class="modal fade" id="ubah-modal-{{ $dt->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -88,14 +88,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/dashboard/kelola-halaman/berita/ubah" method="post" enctype="multipart/form-data">
+        <form action="/dashboard/kelola-halaman/pengumuman/ubah" method="post" enctype="multipart/form-data">
           @csrf
           <div class="row">
             <div class="col-md-12">
               <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Judul<span class="text-danger">*</span></label>
                 <div class="col-sm-9">
-                  <input class="form-control" type="text" name="judul" placeholder="Judul Berita" required value="{{ $dt->judul }}">
+                  <input class="form-control" type="text" name="judul" placeholder="Judul Pengumuman" required value="{{ $dt->judul }}">
                 </div>
               </div>
               <div class="mb-3 row">
@@ -107,7 +107,7 @@
               <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Deskripsi<span class="text-danger">*</span></label>
                 <div class="col-sm-9">
-                  <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="20" placeholder="Deskripsi Berita" required>{!! str_replace('<br />', '', $dt->deskripsi) !!}</textarea>
+                  <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="20" placeholder="Deskripsi Pengumuman" required>{!! str_replace('<br />', '', $dt->deskripsi) !!}</textarea>
                 </div>
               </div>
             </div>
@@ -138,7 +138,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <form action="/dashboard/kelola-halaman/berita/hapus" method="post" enctype="multipart/form-data">
+        <form action="/dashboard/kelola-halaman/pengumuman/hapus" method="post" enctype="multipart/form-data">
           @csrf
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
           <button type="submit" name="id" value="{{ $dt->id }}" class="btn btn-danger">Hapus</button>
