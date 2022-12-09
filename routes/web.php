@@ -24,21 +24,8 @@ use Illuminate\Support\Facades\Route;
 
 // LANDING PAGE
 Route::get('/', [LandingController::class, 'beranda']);
-Route::get('/tes', function () {
-  return view("tes");
-});
-Route::get('/tes2', function () {
-  return view("tes2");
-});
-Route::post('/tes2', function (Request $request) {
-  return $request;
-});
+
 Route::get('/tentang-kami', [LandingController::class, 'tentangKami']);
-// Route::get('/profil', [LandingController::class, 'profil']);
-// Route::get('/visi-misi-tujuan', [LandingController::class, 'visiMisi']);
-// Route::get('/struktur-organisasi', [LandingController::class, 'strukturOrganisasi']);
-// Route::get('/tugas-dan-fungsi', [LandingController::class, 'tugasFungsi']);
-// Route::get('/rencana-strategis', [LandingController::class, 'rencanaStrategis']);
 Route::get('/berita', [LandingController::class, 'berita']);
 Route::get('/pengumuman', [LandingController::class, 'pengumuman']);
 Route::get('/informasi/detail/{informasi}', [LandingController::class, 'informasiDetail']);
@@ -67,7 +54,7 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/external-link/hapus', [ExternalLinkController::class, 'hapus']);
 
   Route::get('/kelola-halaman', [DashboardController::class, 'kelolaHalaman']);
-  // Route::get('/kelola-halaman/{halaman}', [DashboardController::class, 'kelolaHalamanDetail']);
+
   Route::get('/kelola-halaman/tentang-kami', [TentangKamiController::class, 'index']);
   Route::post('/kelola-halaman/tentang-kami/profil', [TentangKamiController::class, 'editProfil']);
   Route::post('/kelola-halaman/tentang-kami/visi-misi', [TentangKamiController::class, 'editVisiMisi']);
@@ -85,6 +72,12 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/pengumuman/tambah', [InformasiController::class, 'tambahPengumuman']);
   Route::post('/kelola-halaman/pengumuman/ubah', [InformasiController::class, 'ubahPengumuman']);
   Route::post('/kelola-halaman/pengumuman/hapus', [InformasiController::class, 'hapusPengumuman']);
+
+  Route::get('/kelola-halaman/regulasi', [RegulasiController::class, 'index']);
+  Route::post('/kelola-halaman/regulasi/tambah', [RegulasiController::class, 'tambahRegulasi']);
+  Route::post('/kelola-halaman/regulasi/ubah', [RegulasiController::class, 'ubahRegulasi']);
+  Route::post('/kelola-halaman/regulasi/hapus', [RegulasiController::class, 'hapusRegulasi']);
+
 
   // Route::prefix('kelola-halaman')->group(function () {
   //   Route::get('/', [DashboardController::class, 'kelolaHalaman']);
@@ -106,5 +99,15 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   //   Route::get('/regulasi', [RegulasiController::class, 'index']);
   //   Route::get('/ppid', [PpidController::class, 'index']);
   //   Route::get('/penghargaan', [PenghargaanController::class, 'index']);
+  // });
+
+  // Route::get('/tes', function () {
+  //   return view("tes");
+  // });
+  // Route::get('/tes2', function () {
+  //   return view("tes2");
+  // });
+  // Route::post('/tes2', function (Request $request) {
+  //   return $request;
   // });
 });

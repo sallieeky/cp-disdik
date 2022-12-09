@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ExternalLink;
 use App\Models\Informasi;
+use App\Models\JenisRegulasi;
+use App\Models\Regulasi;
 use App\Models\RencanaStrategis;
 use App\Models\Slider;
 use App\Models\Umum;
@@ -81,7 +83,9 @@ class LandingController extends Controller
 
     public function regulasi()
     {
-        return view("regulasi");
+        $regulasi = Regulasi::all();
+        $jenisRegulasi = JenisRegulasi::all();
+        return view("regulasi", compact("regulasi", "jenisRegulasi"));
     }
 
     public function ppid()

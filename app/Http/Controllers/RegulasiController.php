@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Regulasi;
 use Illuminate\Http\Request;
 
 class RegulasiController extends Controller
 {
     public function index()
     {
-        return view("dashboard.kelola-halaman.regulasi");
+        $regulasi = Regulasi::all();
+        return view("dashboard.kelola-halaman.regulasi", compact("regulasi"));
     }
 }

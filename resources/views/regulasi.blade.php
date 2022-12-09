@@ -4,35 +4,70 @@
     {{-- HEADER --}}
     <section class="cover height-30 imagebg" id="home" style="
             background-blend-mode: multiply;
-            background-image: url(/img/beranda-hero.jpg);
             background-color: #003049;
             background-repeat: no-repeat;
             background-size: 100%;
             object-fit: cover;
     ">
-        <div class="container pos-vertical-center">
+        <div class="container pos-vertical-center text-center">
             <p style="font-weight: 600; font-size: 2.3em">
                 Regulasi Dinas Pendidikan Kota Balikpapan
             </p>
         </div>
         <!--end of container-->
     </section>
-    <section class="bar bar-3 bar--sm bg--secondary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="bar__module">
-                        <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
-                    </div>
-                </div>
-            </div>
-            <!--end of row-->
-        </div>
-        <!--end of container-->
+    <section class="bar bar-3 bar--sm bg--secondary px-3">
+      <div class="bar__module">
+          <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
+      </div>
     </section>
     {{-- END HEADER --}}
 
-    <section class="p-0">
+    <section class="text-center p-3">
+      <div class="row">
+          <div class="col-md-12">
+              {{-- <div class="tabs-container" data-content-align="left">
+                  <ul class="tabs">
+                    @foreach ($jenisRegulasi as $jr)
+                    <li class="@if($loop->iteration == 1) active @endif">
+                      <div class="tab__title">
+                        <span class="h5">{{ $jr->nama }}</span>
+                      </div>
+                      <div class="tab__content">
+                        <ol style="padding-left: 1.8em">
+                          @foreach ($jr->regulasi as $dt)
+                              <li style="margin:0"><a href="/storage/regulasi/{{ $dt->file }}" target="_blank">{{ $dt->nama }}</a></li>
+                          @endforeach
+                        </ol>
+                      </div>
+                    </li>
+                    @endforeach
+                  </ul>
+              </div> --}}
+              <!--end of tabs container-->
+              <div class="tabs-container tabs--vertical">
+                <ul class="tabs">
+                  @foreach ($jenisRegulasi as $jr)
+                    <li class="@if($loop->iteration == 1) active @endif">
+                        <div class="tab__title">
+                            <span class="h5">{{ $jr->nama }}</span>
+                        </div>
+                        <div class="tab__content text-left">
+                          <ol style="padding-left: 1.8em">
+                          @foreach ($jr->regulasi as $dt)
+                              <li style="margin:0"><a href="/storage/regulasi/{{ $dt->file }}" target="_blank">{{ $dt->nama }}</a></li>
+                          @endforeach
+                          </ol>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    {{-- <section class="p-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mt-5 text-justify">
@@ -74,5 +109,5 @@
                   </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
