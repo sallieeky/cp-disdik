@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Halaman;
-use App\Models\Slider;
 use App\Models\Umum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,14 +11,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
-
         return view("dashboard.beranda");
     }
     public function umum()
     {
-        $slider = Slider::all();
+        $hero = Umum::whereIn("nama", ["hero", "subtitle"])->get()->pluck("nilai", "nama");
         $icon = Umum::where("nama", "icon")->first()->nilai;
-        return view("dashboard.umum", compact("slider", "icon"));
+        return view("dashboard.umum", compact("hero", "icon"));
     }
     public function iconUbah(Request $request)
     {
@@ -34,34 +32,69 @@ class DashboardController extends Controller
         $request->file("file_gambar")->storeAs("public/icon", $request["gambar"]);
         return back()->with("pesan", "ubah");
     }
-    public function sliderTambah(Request $request)
+    public function heroUbah(Request $request)
     {
-        $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
-        $request["user_id"] = Auth::user()->id;
-        Slider::create($request->all());
-        $request->file("file_gambar")->storeAs("public/slider", $request["gambar"]);
-        return back()->with("pesan", "tambah");
-    }
-    public function sliderUbah(Request $request)
-    {
+        // cek apakah ada file_gambar
         if ($request->file("file_gambar")) {
             $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
-            $request->file("file_gambar")->storeAs("public/slider", $request["gambar"]);
+            $data = Umum::where("nama", "hero")->get();
+            if ($data) {
+                Umum::where("nama", "hero")->update([
+                    "nilai" => $request->gambar,
+                    "user_id" => Auth::user()->id
+                ]);
+            } else {
+                Umum::create([
+                    "nama" => "hero",
+                    "nilai" => $request->gambar,
+                    "user_id" => Auth::user()->id
+                ]);
+            }
+            $request->file("file_gambar")->storeAs("public/hero", $request["gambar"]);
         }
-        $request["user_id"] = Auth::user()->id;
-        Slider::where("id", $request->id)
-            ->update([
-                "user_id" => $request->user_id,
-                "gambar" => $request->gambar,
-                "judul" => $request->judul
+        $data = Umum::where("nama", "subtitle")->get();
+        if ($data) {
+            Umum::where("nama", "subtitle")->update([
+                "nilai" => $request->subtitle,
+                "user_id" => Auth::user()->id
             ]);
+        } else {
+            Umum::create([
+                "nama" => "subtitle",
+                "nilai" => $request->subtitle,
+                "user_id" => Auth::user()->id
+            ]);
+        }
         return back()->with("pesan", "ubah");
     }
-    public function sliderHapus(Request $request)
-    {
-        Slider::find($request->id)->delete();
-        return back()->with("pesan", "hapus");
-    }
+    // public function sliderTambah(Request $request)
+    // {
+    //     $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
+    //     $request["user_id"] = Auth::user()->id;
+    //     Slider::create($request->all());
+    //     $request->file("file_gambar")->storeAs("public/hero", $request["gambar"]);
+    //     return back()->with("pesan", "tambah");
+    // }
+    // public function sliderUbah(Request $request)
+    // {
+    //     if ($request->file("file_gambar")) {
+    //         $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
+    //         $request->file("file_gambar")->storeAs("public/hero", $request["gambar"]);
+    //     }
+    //     $request["user_id"] = Auth::user()->id;
+    //     Slider::where("id", $request->id)
+    //         ->update([
+    //             "user_id" => $request->user_id,
+    //             "gambar" => $request->gambar,
+    //             "judul" => $request->judul
+    //         ]);
+    //     return back()->with("pesan", "ubah");
+    // }
+    // public function sliderHapus(Request $request)
+    // {
+    //     Slider::find($request->id)->delete();
+    //     return back()->with("pesan", "hapus");
+    // }
 
     public function login()
     {

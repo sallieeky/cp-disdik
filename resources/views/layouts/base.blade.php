@@ -82,13 +82,13 @@
                         <div class="col-lg-8 col-md-8 text-center hidden-sm text-left-xs text-left-sm">
                             <ul class="menu-horizontal text-left" style="top: 0">
                                 <li class="dropdown">
-                                    <a href="/" style="color: #1D1D1D">Beranda</a>
+                                    <a href="/">Beranda</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="/tentang-kami" style="color: #1D1D1D">Tentang Kami</a>
+                                    <a href="/tentang-kami">Tentang Kami</a>
                                 </li>
                                 <li class="dropdown">
-                                    <span class="dropdown__trigger" style="color: #1D1D1D">Informasi</span>
+                                    <span class="dropdown__trigger">Informasi</span>
                                     <div class="dropdown__container">
                                         <div class="container">
                                             <div class="row">
@@ -114,16 +114,16 @@
                                     <!--end dropdown container-->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="/regulasi" style="color: #1D1D1D">Regulasi</a>
+                                    <a href="/regulasi">Regulasi</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="/ppid" style="color: #1D1D1D">PPID</a>
+                                    <a href="/ppid">PPID</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="/anggaran" style="color: #1D1D1D">Anggaran</a>
+                                    <a href="/anggaran">Anggaran</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="/penghargaan" style="color: #1D1D1D">Penghargaan</a>
+                                    <a href="/penghargaan">Penghargaan</a>
                                 </li>
                             </ul>
                         </div>

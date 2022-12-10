@@ -5,7 +5,7 @@
 <section class="cover height-90 imagebg parallax" data-overlay="4">
     <div class="background-image-holder">
         <div class="background-gradient-custom"></div>
-        <img alt="background" src="/storage/slider/slider1.jpeg" />
+        <img alt="background" src="/storage/hero/{{ $hero["hero"] }}" />
     </div>
     <div class="container pos-vertical-center">
         <div class="row">
@@ -14,7 +14,7 @@
                     <strong>Disdikbud <span class="text-primary">Balikpapan</span></strong>
                 </h1>
                 <p class="lead">
-                    Dinas Pendidikan dan Kebudayaan merupakan sebuah lembaga negara yang bertugas untuk menyelenggarakan urusan pemerintahan di bidang pendidikan dan urusan pemerintahan di bidang kebudayaan, serta tugas pembantuan sesuai dengan ketentuan yang ada di dalam Undang-Undang.
+                    {{ $hero["subtitle"] }}
                 </p>
             </div>
         </div>
