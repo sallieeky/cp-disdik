@@ -8,6 +8,7 @@ use App\Models\JenisAnggaran;
 use App\Models\JenisRegulasi;
 use App\Models\Kontak;
 use App\Models\Penghargaan;
+use App\Models\Ppid;
 use App\Models\Regulasi;
 use App\Models\RencanaStrategis;
 use App\Models\Slider;
@@ -79,19 +80,21 @@ class LandingController extends Controller
     public function anggaran()
     {
         $jenisAnggaran = JenisAnggaran::with("anggaran")->get();
-        // return $jenisAnggaran;
         return view("anggaran", compact("jenisAnggaran"));
-    }
-
-    public function ppid()
-    {
-        return view("penjelasan-ppid");
     }
 
     public function penghargaan()
     {
         $penghargaan = Penghargaan::all();
         return view("penghargaan", compact("penghargaan"));
+    }
+
+    public function ppid()
+    {
+        $ppid = Ppid::whereIn('nama', ['penjelasan ppid', 'daftar informasi publik', 'alur informasi permohonan publik', 'hak dan tata cara ppid'])->get()->keyBy("nama")->map(function ($item) {
+            return $item->isi;
+        });
+        return view("ppid", compact("ppid"));
     }
 
     public function kontak()

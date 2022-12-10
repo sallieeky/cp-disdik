@@ -8,6 +8,24 @@ value: lorem
 name: logo
 value: logo.jpg
 
+PPID
+nama: penjelasa ppid
+isi: text
+
+nama: daftar informasi publik
+isi: text
+
+nama: alur informasi permohonan publik
+isi: img
+
+nama: hak dan tata cara PPID
+isi: pdf
+
+
+
+
+
+
 halaman static
 beranda
 profil

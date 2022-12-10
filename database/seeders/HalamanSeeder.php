@@ -15,8 +15,8 @@ class HalamanSeeder extends Seeder
      */
     public function run()
     {
-        $url = ["/tentang-kami", "/berita", "/pengumuman", "/regulasi", "/penghargaan", "/anggaran"];
-        $judul = ["Tentang Kami", "Berita", "Pengumuman", "Regulasi", "Penghargaan", "Anggaran"];
+        $url = ["/tentang-kami", "/berita", "/pengumuman", "/regulasi", "/ppid", "/penghargaan", "/anggaran"];
+        $judul = ["Tentang Kami", "Berita", "Pengumuman", "Regulasi", "PPID", "Penghargaan", "Anggaran"];
         for ($i = 0; $i < count($url); $i++) {
             Halaman::create([
                 "url" => $url[$i],

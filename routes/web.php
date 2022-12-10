@@ -7,6 +7,7 @@ use App\Http\Controllers\ExternalLinkController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PenghargaanController;
+use App\Http\Controllers\PpidController;
 use App\Http\Controllers\RegulasiController;
 use App\Http\Controllers\TentangKamiController;
 use Illuminate\Http\Request;
@@ -80,6 +81,9 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/regulasi/tambah', [RegulasiController::class, 'tambahRegulasi']);
   Route::post('/kelola-halaman/regulasi/ubah', [RegulasiController::class, 'ubahRegulasi']);
   Route::post('/kelola-halaman/regulasi/hapus', [RegulasiController::class, 'hapusRegulasi']);
+
+  Route::get('/kelola-halaman/ppid', [PpidController::class, 'index']);
+
 
   Route::get('/kelola-halaman/penghargaan', [PenghargaanController::class, 'index']);
   Route::post('/kelola-halaman/penghargaan/tambah', [PenghargaanController::class, 'tambahPenghargaan']);
