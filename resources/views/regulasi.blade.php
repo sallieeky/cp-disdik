@@ -34,25 +34,6 @@
     <section class="text-center p-3">
       <div class="row">
           <div class="col-md-12">
-              {{-- <div class="tabs-container" data-content-align="left">
-                  <ul class="tabs">
-                    @foreach ($jenisRegulasi as $jr)
-                    <li class="@if($loop->iteration == 1) active @endif">
-                      <div class="tab__title">
-                        <span class="h5">{{ $jr->nama }}</span>
-                      </div>
-                      <div class="tab__content">
-                        <ol style="padding-left: 1.8em">
-                          @foreach ($jr->regulasi as $dt)
-                              <li style="margin:0"><a href="/storage/regulasi/{{ $dt->file }}" target="_blank">{{ $dt->nama }}</a></li>
-                          @endforeach
-                        </ol>
-                      </div>
-                    </li>
-                    @endforeach
-                  </ul>
-              </div> --}}
-              <!--end of tabs container-->
               <div class="tabs-container tabs--vertical">
                 <ul class="tabs">
                   @foreach ($jenisRegulasi as $jr)

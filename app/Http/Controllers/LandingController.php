@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ExternalLink;
 use App\Models\Informasi;
+use App\Models\JenisAnggaran;
 use App\Models\JenisRegulasi;
 use App\Models\Kontak;
 use App\Models\Penghargaan;
@@ -73,6 +74,13 @@ class LandingController extends Controller
         $regulasi = Regulasi::all();
         $jenisRegulasi = JenisRegulasi::all();
         return view("regulasi", compact("regulasi", "jenisRegulasi"));
+    }
+
+    public function anggaran()
+    {
+        $jenisAnggaran = JenisAnggaran::with("anggaran")->get();
+        // return $jenisAnggaran;
+        return view("anggaran", compact("jenisAnggaran"));
     }
 
     public function ppid()

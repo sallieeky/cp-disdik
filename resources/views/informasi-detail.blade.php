@@ -21,7 +21,20 @@
     <section class="bar bar-3 bar--sm bg--secondary">
         <div class="px-3">
             <div class="bar__module">
-                <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
+                <span class="type--fade">
+                    {{-- make breadcrumb with icon --}}
+                    <a href="/" style="text-decoration:none" class="text-dark">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <i class="fas fa-angle-right"></i>
+                    <a href="/{{ $informasi->kategori }}" style="text-decoration:none" class="text-dark">
+                        {{ $informasi->kategori }}
+                    </a>
+                    <i class="fas fa-angle-right"></i>
+                    <a href="/informasi/{{ $informasi->id }}" style="text-decoration:none" class="text-dark">
+                        {{ $informasi->judul }}
+                    </a>
+                </span>
             </div>
         </div>
     </section>

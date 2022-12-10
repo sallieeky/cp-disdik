@@ -23,6 +23,12 @@
                   </div>
                 </div>
                 <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label">Tahun<span class="text-danger">*</span></label>
+                  <div class="col-sm-9">
+                    <input class="form-control" type="number" name="tahun" placeholder="Tahun Anggaran" required>
+                  </div>
+                </div>
+                <div class="mb-3 row">
                   <label class="col-sm-3 col-form-label">Jenis Anggaran<span class="text-danger">*</span></label>
                   <div class="col-sm-9">
                     <input class="form-control" list="jenisAnggaran" id="exampleDataList" placeholder="Jenis Anggaran" name="jenis_anggaran" required>
@@ -51,6 +57,7 @@
                   <thead>
                     <tr>
                       <th>Nama</th>
+                      <th>Tahun</th>
                       <th>Jenis Regulasi</th>
                       <th>File</th>
                       <th>Aksi</th>
@@ -60,6 +67,7 @@
                     @foreach ($anggaran as $dt)
                     <tr>
                       <td>{{ $dt->nama }}</td>
+                      <td>{{ $dt->tahun }}</td>
                       <td>{{ $dt->jenisAnggaran->nama }}</td>
                       <td><a href="/storage/anggaran/{{ $dt->file }}" target="_blank" class="btn btn-primary"><i class="fa fa-download"></i></a></td>
                       <td>
@@ -102,6 +110,12 @@
                 <label class="col-sm-3 col-form-label">Nama<span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                   <input class="form-control" type="text" name="nama" placeholder="Nama Anggaran" required value="{{ $dt->nama }}">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Tahun<span class="text-danger">*</span></label>
+                <div class="col-sm-9">
+                  <input class="form-control" type="number" name="tahun" placeholder="Tahun Anggaran" required value="{{ $dt->tahun }}">
                 </div>
               </div>
               <div class="mb-3 row">

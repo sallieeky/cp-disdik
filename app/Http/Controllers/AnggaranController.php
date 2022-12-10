@@ -29,6 +29,7 @@ class AnggaranController extends Controller
         Anggaran::create([
             'jenis_anggaran_id' => $jenisAnggaran->id,
             'nama' => $request->nama,
+            'tahun' => $request->tahun,
             'file' => $request->file('file_file')->getClientOriginalName(),
         ]);
         $request->file('file_file')->storeAs('public/anggaran', $request->file('file_file')->getClientOriginalName());
@@ -49,6 +50,7 @@ class AnggaranController extends Controller
         $anggaran = Anggaran::find($request->id);
         $anggaran->jenis_anggaran_id = $jenisAnggaran->id;
         $anggaran->nama = $request->nama;
+        $anggaran->tahun = $request->tahun;
         // cek apakah ada file yang diupload
         if ($request->file('file_file') != null) {
             $anggaran->file = $request->file('file_file')->getClientOriginalName();
