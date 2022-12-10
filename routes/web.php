@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnggaranController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExternalLinkController;
@@ -83,6 +84,11 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/penghargaan/tambah', [PenghargaanController::class, 'tambahPenghargaan']);
   Route::post('/kelola-halaman/penghargaan/ubah', [PenghargaanController::class, 'ubahPenghargaan']);
   Route::post('/kelola-halaman/penghargaan/hapus', [PenghargaanController::class, 'hapusPenghargaan']);
+
+  Route::get('/kelola-halaman/anggaran', [AnggaranController::class, 'index']);
+  Route::post('/kelola-halaman/anggaran/tambah', [AnggaranController::class, 'tambahAnggaran']);
+  Route::post('/kelola-halaman/anggaran/ubah', [AnggaranController::class, 'ubahAnggaran']);
+  Route::post('/kelola-halaman/anggaran/hapus', [AnggaranController::class, 'hapusAnggaran']);
 
 
   // Route::prefix('kelola-halaman')->group(function () {

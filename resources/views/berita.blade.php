@@ -21,7 +21,19 @@
     <section class="bar bar-3 bar--sm bg--secondary">
         <div class="px-3">
             <div class="bar__module">
-                <span class="type--fade">Dibuat pada : Minggu, 10 November 2022 | Di upload oleh: admin</span>
+                <span class="type--fade">
+                    <div class="bar__module">
+                        <span class="type--fade">
+                            <a href="/" class="text-dark" style="text-decoration:none">
+                                <i class="fas fa-home"></i>
+                            </a>
+                            <i class="fas fa-angle-right"></i>
+                            <a href="/berita" class="text-dark" style="text-decoration:none">
+                                Berita
+                            </a>
+                        </span>
+                    </div>
+                </span>
             </div>
         </div>
     </section>
