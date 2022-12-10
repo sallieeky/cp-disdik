@@ -88,7 +88,7 @@
                                     <a href="/tentang-kami" style="color: #1D1D1D">Tentang Kami</a>
                                 </li>
                                 <li class="dropdown">
-                                    <span class="dropdown__trigger">Informasi</span>
+                                    <span class="dropdown__trigger" style="color: #1D1D1D">Informasi</span>
                                     <div class="dropdown__container">
                                         <div class="container">
                                             <div class="row">
@@ -114,68 +114,16 @@
                                     <!--end dropdown container-->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="/regulasi">Regulasi</a>
+                                    <a href="/regulasi" style="color: #1D1D1D">Regulasi</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="/ppid">PPID</a>
+                                    <a href="/ppid" style="color: #1D1D1D">PPID</a>
                                 </li>
-                                {{-- <li class="dropdown">
-                                    <span class="dropdown__trigger">PPID</span>
-                                    <div class="dropdown__container">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="dropdown__content col-lg-2 col-md-4">
-                                                    <ul class="menu-vertical">
-                                                        <li class="">
-                                                            <a href="/penjelasan-ppid">
-                                                                Penjelasan PPID
-                                                            </a>
-                                                        </li>
-                                                        <li class="">
-                                                            <a href="#">
-                                                                Pengumuman
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <!--end dropdown content-->
-                                            </div>
-                                            <!--end row-->
-                                        </div>
-                                    </div>
-                                    <!--end dropdown container-->
-                                </li> --}}
                                 <li class="dropdown">
                                     <a href="/anggaran" style="color: #1D1D1D">Anggaran</a>
                                 </li>
-                                {{-- <li class="dropdown">
-                                    <span class="dropdown__trigger">Anggaran</span>
-                                    <div class="dropdown__container">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="dropdown__content col-lg-2 col-md-4">
-                                                    <ul class="menu-vertical">
-                                                        <li class="">
-                                                            <a href="#">
-                                                                Menu 1
-                                                            </a>
-                                                        </li>
-                                                        <li class="">
-                                                            <a href="#">
-                                                                Menu 2
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <!--end dropdown content-->
-                                            </div>
-                                            <!--end row-->
-                                        </div>
-                                    </div>
-                                    <!--end dropdown container-->
-                                </li> --}}
                                 <li class="dropdown">
-                                    <a href="/penghargaan">Penghargaan</a>
+                                    <a href="/penghargaan" style="color: #1D1D1D">Penghargaan</a>
                                 </li>
                             </ul>
                         </div>

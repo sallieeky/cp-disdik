@@ -17,7 +17,7 @@ class SliderSeeder extends Seeder
     {
         Slider::create([
             "user_id" => 1,
-            "gambar" => "beranda-hero.jpg",
+            "gambar" => "slider1.jpeg",
             "judul" => "Selamat datang di Dinas Pendidikan Kota Balikpapan"
         ]);
         Slider::create([

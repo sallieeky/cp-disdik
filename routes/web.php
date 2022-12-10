@@ -83,6 +83,7 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/regulasi/hapus', [RegulasiController::class, 'hapusRegulasi']);
 
   Route::get('/kelola-halaman/ppid', [PpidController::class, 'index']);
+  Route::post('/kelola-halaman/ppid/ubah/{nama}', [PpidController::class, 'ubah']);
 
 
   Route::get('/kelola-halaman/penghargaan', [PenghargaanController::class, 'index']);

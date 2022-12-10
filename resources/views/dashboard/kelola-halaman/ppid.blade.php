@@ -11,12 +11,12 @@
           <span>Penjelasan PPID Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>
         </div>
         <div class="card-body">
-          <form action="/dashboard/kelola-halaman/tentang-kami/profil" method="post" enctype="multipart/form-data">
+          <form action="/dashboard/kelola-halaman/ppid/ubah/penjelasan ppid" method="post" enctype="multipart/form-data">
             @csrf
             <hr>
             <div class="row">
               <div class="col-md-12">
-                <textarea class="form-control" rows="7" required>{!!  !!}</textarea>
+                <textarea class="form-control" rows="7" required name="isi">{!! str_replace('<br />', '', $ppid["penjelasan ppid"]) !!}</textarea>
                 <button type="submit" id="bootstrap-notify-gen-btn" class="btn btn-primary w-100 mt-3">Ubah</button>
               </div>
             </div>
@@ -33,12 +33,12 @@
           <span>Daftar informasi publik Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>
         </div>
         <div class="card-body">
-          <form action="/dashboard/kelola-halaman/tentang-kami/profil" method="post" enctype="multipart/form-data">
+          <form action="/dashboard/kelola-halaman/ppid/ubah/daftar informasi publik" method="post" enctype="multipart/form-data">
             @csrf
             <hr>
             <div class="row">
               <div class="col-md-12">
-                <textarea class="form-control" rows="7" required></textarea>
+                <textarea class="form-control" rows="7" required name="isi">{!! str_replace('<br />', '', $ppid["daftar informasi publik"]) !!}</textarea>
                 <button type="submit" id="bootstrap-notify-gen-btn" class="btn btn-primary w-100 mt-3">Ubah</button>
               </div>
             </div>
@@ -51,16 +51,36 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header pb-0">
-          <h5>Alur Informasi Permohonan Publik</h5>
-          <span>Alur informasi permohonan publik Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Alur Informasi Permohonan Publik</h5>
+              <span>Alur informasi permohonan publik Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>
+            </div>
+            <div class="col-md-6">
+              <h5>Hak dan Tata Cara PPID</h5>
+              <span>Hak dan tata cara PPID Dinas Pendidikan dan Kebudayaan Kota Balikpapan</span>
+            </div>
+          </div>
         </div>
         <div class="card-body">
           <div class="row">
-            <div class="col-md-12">
-                <form action="/dashboard/kelola-halaman/tentang-kami/visi-misi" method="post" enctype="multipart/form-data">
+            <div class="col-md-6">
+                <form action="/dashboard/kelola-halaman/ppid/ubah/alur informasi permohonan publik" method="post" enctype="multipart/form-data">
                   @csrf
-                <img src="/storage/ppid/" alt="Visi dan Misi" style="width: 100%" class="text-center">
-                <input type="file" class="form-control my-3" accept="image/*" name="file_visimisi" required>
+                <img src="/storage/ppid/{{ $ppid["alur informasi permohonan publik"] }}" alt="Alur Informasi Permohonan Publik" style="height: 200px" class="text-center">
+                <input type="file" class="form-control my-3" accept="image/*" name="file_isi" required>
+                <button type="submit" id="bootstrap-notify-gen-btn" class="btn btn-primary w-100">Ubah</button>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <form action="/dashboard/kelola-halaman/ppid/ubah/hak dan tata cara ppid" method="post" enctype="multipart/form-data">
+                @csrf
+                {{-- buat a untuk file tata cara ppid dengan icon --}}
+                <a href="/storage/ppid/{{ $ppid["hak dan tata cara ppid"] }}">
+                  <i class="fa fa-file-pdf-o"></i>
+                  {{ $ppid["hak dan tata cara ppid"] }}
+                </a>
+                <input class="form-control my-3" type="file" accept=".pdf" name="file_isi" required>
                 <button type="submit" id="bootstrap-notify-gen-btn" class="btn btn-primary w-100">Ubah</button>
               </form>
             </div>
@@ -69,7 +89,7 @@
       </div>
     </div>
 
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
       <div class="card">
         <div class="card-header pb-0">
           <h5>Kelola Rencana Strategis</h5>
@@ -90,7 +110,7 @@
                 <div class="mb-3 row">
                   <label class="col-sm-3 col-form-label">File<span class="text-danger">*</span></label>
                   <div class="col-sm-9">
-                    <input class="form-control" type="file" accept=".pdf" name="file_rencanastrategis" required>
+                    <input class="form-control" type="file" accept=".pdf" name="file_file" required>
                   </div>
                 </div>
                 <button type="submit" id="bootstrap-notify-gen-btn" class="btn btn-primary w-100">Tambah</button>
@@ -100,7 +120,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> --}}
 
   </div>
 </div>

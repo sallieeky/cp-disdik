@@ -1,11 +1,33 @@
 @extends('layouts.base')
 @section('title', 'Beranda')
 @section('content')
-    <section class="cover height-70 imagebg text-center slider slider--ken-burns" data-arrows="true" data-paging="true">
+
+<section class="cover height-90 imagebg parallax" data-overlay="4">
+    <div class="background-image-holder">
+        <div class="background-gradient-custom"></div>
+        <img alt="background" src="/storage/slider/slider1.jpeg" />
+    </div>
+    <div class="container pos-vertical-center">
+        <div class="row">
+            <div class="col-md-9 col-lg-7">
+                <h1 class="">
+                    <strong>Disdikbud <span class="text-primary">Balikpapan</span></strong>
+                </h1>
+                <p class="lead">
+                    Dinas Pendidikan dan Kebudayaan merupakan sebuah lembaga negara yang bertugas untuk menyelenggarakan urusan pemerintahan di bidang pendidikan dan urusan pemerintahan di bidang kebudayaan, serta tugas pembantuan sesuai dengan ketentuan yang ada di dalam Undang-Undang.
+                </p>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+    {{-- <section class="cover height-80 imagebg text-center slider slider--ken-burns" data-arrows="true" data-paging="true">
         <ul class="slides">
             @foreach ($slider as $dt)
             <li class="imagebg" data-overlay="4">
-                <div class="background-image-holder background--top">
+                <div class="background-image-holder">
                     <img alt="background" src="/storage/slider/{{ $dt->gambar }}" />
                 </div>
                 <div class="container pos-vertical-center">
@@ -21,24 +43,8 @@
                 <!--end of container-->
             </li>
             @endforeach
-            {{-- <li class="imagebg" data-overlay="4">
-                <div class="background-image-holder">
-                    <img alt="background" src="/template/img/landing-3.jpg" />
-                </div>
-                <div class="container pos-vertical-center">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1>
-                                Selamat datang di <span class="text-primary">Dinas Pendidikan Kota Balikpapan</span>
-                            </h1>
-                        </div>
-                    </div>
-                    <!--end of row-->
-                </div>
-                <!--end of container-->
-            </li> --}}
         </ul>
-    </section>
+    </section> --}}
     <section class="text-center">
         <div class="container">
             <div class="row justify-content-center">
