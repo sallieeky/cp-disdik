@@ -74,6 +74,7 @@
                     <ul>
                         <li><a href="/berita">Berita</a></li>
                         <li><a href="/pengumuman">Pengumuman</a></li>
+                        <li><a href="/pojok-pintar">Pojok Pintar</a></li>
                     </ul>
                 </div>
                 <!--end widget-->

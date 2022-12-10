@@ -99,8 +99,8 @@ class InformasiController extends Controller
 
     public function pojokPintar()
     {
-        $berita = Informasi::where("kategori", "berita")->get();
-        return view("dashboard.kelola-halaman.berita", compact("berita"));
+        $informasi = Informasi::where("kategori", "pojok-pintar")->get();
+        return view("dashboard.kelola-halaman.pojok-pintar", compact("informasi"));
     }
 
     public function tambahPojokPintar(Request $request)
@@ -108,7 +108,7 @@ class InformasiController extends Controller
         $berita = new Informasi();
         $berita->user_id = Auth::user()->id;
         $berita->judul = $request->judul;
-        $berita->kategori = "pojokpintar";
+        $berita->kategori = "pojok-pintar";
         $berita->deskripsi = nl2br($request->deskripsi);
         $berita->gambar = $request->file("file_gambar")->getClientOriginalName();
         $berita->save();
@@ -123,7 +123,7 @@ class InformasiController extends Controller
         $berita = Informasi::find($request->id);
         $berita->user_id = Auth::user()->id;
         $berita->judul = $request->judul;
-        $berita->kategori = "pojokpintar";
+        $berita->kategori = "pojok-pintar";
         $berita->deskripsi = nl2br($request->deskripsi);
         if ($request->file("file_gambar")) {
             $berita->gambar = $request->file("file_gambar")->getClientOriginalName();

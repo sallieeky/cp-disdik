@@ -60,9 +60,10 @@ class LandingController extends Controller
         return view("pengumuman", compact("pengumuman", "terbaru"));
     }
 
-    public function pojokPintar(Request $request)
+    public function pojokPintar()
     {
-        // 
+        $pojokPintar = Informasi::where("kategori", "pojok-pintar")->orderBy("created_at", "desc")->paginate(1);
+        return view("pojok-pintar", compact("pojokPintar"));
     }
 
     public function informasiDetail(Informasi $informasi)
