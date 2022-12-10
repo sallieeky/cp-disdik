@@ -30,6 +30,8 @@ Route::get('/', [LandingController::class, 'beranda']);
 Route::get('/tentang-kami', [LandingController::class, 'tentangKami']);
 Route::get('/berita', [LandingController::class, 'berita']);
 Route::get('/pengumuman', [LandingController::class, 'pengumuman']);
+Route::get('/pojok-pintar', [LandingController::class, 'pojokPintar']);
+
 Route::get('/informasi/detail/{informasi}', [LandingController::class, 'informasiDetail']);
 Route::get('/regulasi', [LandingController::class, 'regulasi']);
 Route::get('/ppid', [LandingController::class, 'ppid']);
@@ -49,9 +51,6 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::get('/umum', [DashboardController::class, 'umum']);
   Route::post('/umum/icon/ubah', [DashboardController::class, 'iconUbah']);
   Route::post('/umum/hero/ubah', [DashboardController::class, 'heroUbah']);
-  // Route::post('/umum/slider/tambah', [DashboardController::class, 'sliderTambah']);
-  // Route::post('/umum/slider/ubah', [DashboardController::class, 'sliderUbah']);
-  // Route::post('/umum/slider/hapus', [DashboardController::class, 'sliderHapus']);
 
   Route::get('/external-link', [ExternalLinkController::class, 'index']);
   Route::post('/external-link/tambah', [ExternalLinkController::class, 'tambah']);
@@ -77,6 +76,11 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/pengumuman/tambah', [InformasiController::class, 'tambahPengumuman']);
   Route::post('/kelola-halaman/pengumuman/ubah', [InformasiController::class, 'ubahPengumuman']);
   Route::post('/kelola-halaman/pengumuman/hapus', [InformasiController::class, 'hapusPengumuman']);
+
+  Route::get('/kelola-halaman/pojok-pintar', [InformasiController::class, 'pojokPintar']);
+  Route::post('/kelola-halaman/pojok-pintar/tambah', [InformasiController::class, 'tambahPojokPintar']);
+  Route::post('/kelola-halaman/pojok-pintar/ubah', [InformasiController::class, 'ubahPojokPintar']);
+  Route::post('/kelola-halaman/pojok-pintar/hapus', [InformasiController::class, 'hapusPojokPintar']);
 
   Route::get('/kelola-halaman/regulasi', [RegulasiController::class, 'index']);
   Route::post('/kelola-halaman/regulasi/tambah', [RegulasiController::class, 'tambahRegulasi']);

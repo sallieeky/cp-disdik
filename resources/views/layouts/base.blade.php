@@ -4,7 +4,8 @@
     use Carbon\Carbon;
     use Illuminate\Support\Facades\DB;
 
-    $icon = Umum::where("nama", "icon")->first()->nilai;
+    // icon
+    $icon = Umum::where("nama", "icon")->first();
     $pengunjung["semua"] = Umum::where("nama", "pengunjung")->count();
     $pengunjung["hari_ini"] = Umum::where("nama", "pengunjung")->whereDate("created_at", Carbon::today())->get()->count();
     $pengunjung["kemarin"] = Umum::where("nama", "pengunjung")->whereDate("created_at", Carbon::yesterday())->get()->count();
@@ -104,6 +105,11 @@
                                                                 Pengumuman
                                                             </a>
                                                         </li>
+                                                        <li class="">
+                                                            <a href="/pojok-pintar">
+                                                                Pojok Pintar
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <!--end dropdown content-->
@@ -144,7 +150,6 @@
 
             {{-- FOOTER --}}
             <section class="elements-title space--xxs text-center">
-                <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <h6 class="type--uppercase">INFO LINK</h6>
@@ -155,9 +160,9 @@
                             <div class="slider slider--inline-arrows slider--arrows-hover text-center">
                                 <ul class="slides">
                                     @foreach ($infolink as $dt)
-                                    <li class="col-md-3 col-6">
+                                    <li class="col-md-4 col-6">
                                         <a href="{{ $dt->url }}" target="_blank">
-                                            <img alt="Image" class="image--md" src="/storage/external-link/{{ $dt->gambar }}" />
+                                            <img alt="Image" class="image--xs" src="/storage/external-link/{{ $dt->gambar }}" />
                                         </a>
                                     </li>
                                     @endforeach
@@ -167,8 +172,6 @@
                         <!--end of col-->
                     </div>
                     <!--end of row-->
-                </div>
-                <!--end of container-->
             </section>
             {{-- END FOOTER --}}
 
@@ -177,6 +180,8 @@
                     <div class="row">
                         <div class="col-md-6 col-lg-3 mb-5">
                             <h6 class="type--uppercase">Tentang kami</h6>
+                            {{-- icon disdik --}}
+                            <img src="/storage/icon/{{ $icon->nilai }}" style="object-fit: cover; max-height:100px" />
                             <p>
                                 Dinas Pendidikan dan Kebudayaan merupakan sebuah lembaga negara yang bertugas untuk menyelenggarakan urusan pemerintahan di bidang pendidikan dan urusan pemerintahan di bidang kebudayaan, serta tugas pembantuan sesuai dengan ketentuan yang ada di dalam Undang-Undang.
                             </p>

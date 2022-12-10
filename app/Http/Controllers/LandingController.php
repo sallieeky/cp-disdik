@@ -26,7 +26,9 @@ class LandingController extends Controller
         ]);
         $hero = Umum::whereIn("nama", ["hero", "subtitle"])->get()->pluck("nilai", "nama");
         $layananlainnya = ExternalLink::with("jenis_link")->whereRelation("jenis_link", "nama", "=", "Layanan Lainnya")->get();
-        return view("beranda", compact("hero", "layananlainnya"));
+        $berita = Informasi::where("kategori", "berita")->orderBy("created_at", "desc")->limit(3)->get();
+        $pengumuman = Informasi::where("kategori", "pengumuman")->orderBy("created_at", "desc")->limit(3)->get();
+        return view("beranda", compact("hero", "layananlainnya", "berita", "pengumuman"));
     }
 
     public function tentangKami()
@@ -56,6 +58,11 @@ class LandingController extends Controller
             ->paginate(6);
         $terbaru = Informasi::where("kategori", "pengumuman")->orderBy("created_at", "desc")->take(3)->get();
         return view("pengumuman", compact("pengumuman", "terbaru"));
+    }
+
+    public function pojokPintar(Request $request)
+    {
+        // 
     }
 
     public function informasiDetail(Informasi $informasi)
