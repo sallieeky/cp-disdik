@@ -52,6 +52,10 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/umum/icon/ubah', [DashboardController::class, 'iconUbah']);
   Route::post('/umum/hero/ubah', [DashboardController::class, 'heroUbah']);
 
+  Route::get('/kontak', [DashboardController::class, 'kontak']);
+  Route::post('/kontak/ubah', [DashboardController::class, 'kontakUbah']);
+
+
   Route::get('/external-link', [ExternalLinkController::class, 'index']);
   Route::post('/external-link/tambah', [ExternalLinkController::class, 'tambah']);
   Route::post('/external-link/ubah', [ExternalLinkController::class, 'ubah']);

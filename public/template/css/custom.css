@@ -13,7 +13,7 @@
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #29507d;
 }
 
 /* make background-gradient bg gradient from dark to light from left to right */

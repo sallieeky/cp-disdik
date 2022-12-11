@@ -134,6 +134,7 @@
                             <a href="/" target="_blank">
                                 <img
                                     class="img-fluid"
+                                    style="max-height: 50px"
                                     src="/storage/icon/{{ $icon }}"
                                     alt="Dashboard Company Profile Dinas Pendidikan Kota Balikpapan"
                                 />
@@ -192,60 +193,15 @@
                                     <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/beranda"><i data-feather="home"></i><span>Beranda Dashboard</span></a></li>
                                     <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/umum"><i data-feather="settings"></i><span>Kelola Data Umum</span></a></li>
                                     <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/external-link"><i data-feather="external-link"></i><span>Kelola External Link</span></a></li>
+                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/kontak"><i data-feather="phone"></i><span>Kelola Kontak</span></a></li>
+
+
                                     <li class="sidebar-main-title">
                                         <div>
-                                            <h6>Kelola Halaman</h6>
+                                            <h6>Halaman</h6>
                                         </div>
                                     </li>
-                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman"><i data-feather="settings"></i><span>Kelola Halaman</span></a></li>
-                                    {{-- <li class="dropdown">
-                                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="settings"></i><span>Tentang kami</span></a>
-                                        <ul class="nav-submenu menu-content">
-                                            <li>
-                                                <a href="/dashboard/kelola-halaman/profil">Profil</a>
-                                            </li>
-                                            <li>
-                                                <a href="/dashboard/kelola-halaman/visi-misi-dan-tujuan">Visi, misi, dan tujuan</a>
-                                            </li>
-                                            <li>
-                                                <a href="/dashboard/kelola-halaman/struktur-organisasi">Struktur organisasi</a>
-                                            </li>
-                                            <li>
-                                                <a href="/dashboard/kelola-halaman/tugas-dan-fungsi">Tugas dan fungsi</a>
-                                            </li>
-                                            <li>
-                                                <a href="/dashboard/kelola-halaman/rencana-strategis">Rencana strategis</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="settings"></i><span>Informasi</span></a>
-                                        <ul class="nav-submenu menu-content">
-                                            <li>
-                                                <a href="/dashboard/kelola-halaman/berita">Berita</a>
-                                            </li>
-                                            <li>
-                                                <a href="/dashboard/kelola-halaman/pengumuman">Pengumuman</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman/regulasi"><i data-feather="settings"></i><span>Regulasi</span></a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman/ppid"><i data-feather="settings"></i><span>PPID</span></a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman/penghargaan"><i data-feather="settings"></i><span>Penghargaan</span></a>
-                                    </li>
-                                    <li class="sidebar-main-title">
-                                        <div>
-                                            <h6>Tambahan</h6>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman"><i data-feather="plus-square"></i><span>Kelola halaman</span></a>
-                                    </li> --}}
+                                    <li class="dropdown"><a class="nav-link menu-title link-nav" href="/dashboard/kelola-halaman"><i data-feather="file"></i><span>Kelola Halaman</span></a></li>
                                 </ul>
                             </div>
                             <div class="right-arrow" id="right-arrow">

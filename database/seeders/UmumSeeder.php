@@ -31,12 +31,12 @@ class UmumSeeder extends Seeder
         ]);
         Umum::create([
             "nama" => "subtitle",
-            "nilai" => "Dinas Pendidikan dan Kebudayaan merupakan sebuah lembaga negara yang bertugas untuk menyelenggarakan urusan pemerintahan di bidang pendidikan dan urusan pemerintahan di bidang kebudayaan, serta tugas pembantuan sesuai dengan ketentuan yang ada di dalam Undang-Undang.",
+            "nilai" => "Temukan informasi seputar Dinas Pendidikan dan Kebudayaan Kota Balikpapan disini",
             "user_id" => 1
         ]);
         Umum::create([
             "nama" => "profil",
-            "nilai" => '<p style="margin-right: 0px; margin-bottom: 1.85714em; margin-left: 0px; padding: 0px; transition: all 0.3s linear 0s; display: inline-block; color: rgb(102, 102, 102); font-family: Quicksand, &quot;Open Sans&quot;, Helvetica, Arial, sans-serif; letter-spacing: normal;">Profil Pendidikan Kota Balikpapan merupakan suatu model dalam menyusun profil pendidikan yang memberikan informasi tentang statistik pendidikan di Kota Balikpapan secara umum. Profil ini mencakup berbagai jenjang, jenis dan jalur pendidikan yang meliputi antara lain jumlah sekolah, tenaga pendidik dan kependidikan, peserta didik, sumber pembiayaan, angka partisipasi sekolah, angka mengulang, angka melanjutkan, jumlah putus sekolah, tahun siswa terbuang, jumlah keluaran dan masih banyak lagi.</p><p style="margin-right: 0px; margin-bottom: 1.85714em; margin-left: 0px; padding: 0px; transition: all 0.3s linear 0s; display: inline-block; color: rgb(102, 102, 102); font-family: Quicksand, &quot;Open Sans&quot;, Helvetica, Arial, sans-serif; letter-spacing: normal;">Data yang digunakan untuk menyusun profil pendidikan ini terdiri data tahunan yang berasal dari Bagian Pengembangan Data dan Jaringan Kependidikan (PDJK) Dinas Pendidikan Kota Balikpapan, Badan Pusat Statistik Kota Balikpapan dan Dinas Kependudukan dan Catatan Sipil Kota Balikpapan.</p>'
+            "nilai" => 'Profil Pendidikan Kota Balikpapan merupakan suatu model dalam menyusun profil pendidikan yang memberikan informasi tentang statistik pendidikan di Kota Balikpapan secara umum. Profil ini mencakup berbagai jenjang, jenis dan jalur pendidikan yang meliputi antara lain jumlah sekolah, tenaga pendidik dan kependidikan, peserta didik, sumber pembiayaan, angka partisipasi sekolah, angka mengulang, angka melanjutkan, jumlah putus sekolah, tahun siswa terbuang, jumlah keluaran dan masih banyak lagi.<br /><br /> Data yang digunakan untuk menyusun profil pendidikan ini terdiri data tahunan yang berasal dari Bagian Pengembangan Data dan Jaringan Kependidikan (PDJK) Dinas Pendidikan Kota Balikpapan, Badan Pusat Statistik Kota Balikpapan dan Dinas Kependudukan dan Catatan Sipil Kota Balikpapan.'
         ]);
         Umum::create([
             "nama" => "visimisi",
@@ -47,6 +47,7 @@ class UmumSeeder extends Seeder
             "nilai" => "Struktur_3.png"
         ]);
 
+        // Kontak
         Umum::create([
             "nama" => "Alamat",
             "nilai" => "Jl. Ruhui Rahayu 1, Sepinggan, Kecamatan Balikpapan Selatan, Kota Balikpapan, Kalimantan Timur 76115"

@@ -26,7 +26,7 @@ class TentangKamiController extends Controller
             $profil->nama = "profil";
             $profil->user_id = Auth::user()->id;
         }
-        $profil->nilai = $request->profil;
+        $profil->nilai = nl2br($request->profil);
         $profil->save();
         return redirect()->back()->with("pesan", "ubah");
     }

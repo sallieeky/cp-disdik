@@ -1,9 +1,5 @@
 @extends('layouts.dashboard-base')
 @section("title", "Kelola Halaman Tentang Kami")
-@section("css")
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<link href="/tes/editor.css" type="text/css" rel="stylesheet"/>
-@endsection
 @section("content")
 <div class="container-fluid">
   <div class="row">
@@ -19,8 +15,7 @@
             <hr>
             <div class="row">
               <div class="col-md-12">
-                <textarea id="demo-editor-bootstrap"></textarea>
-                <input type="hidden" name="profil" id="inputValue" required>
+                  <textarea class="form-control" name="profil" id="profil" cols="30" rows="20" placeholder="Profil Dinas Pendidikan dan Kebudayaan Kota Balikpapan" required>{!! str_replace('<br />', '', $profil->nilai) !!}</textarea>
                 <button type="submit" id="bootstrap-notify-gen-btn" class="btn btn-primary w-100 mt-3">Ubah</button>
               </div>
             </div>
@@ -197,15 +192,6 @@
     "paging":   true,
     "ordering": true,
     "info":     false
-  });
-  $("#demo-editor-bootstrap").Editor();
-  const inputValue = document.getElementById("inputValue");
-  const editorValue = document.getElementById("editorValue");
-  inputValue.value = `{!! $profil->nilai !!}`
-  editorValue.innerHTML = `{!! $profil->nilai !!}`
-
-  editorValue.addEventListener("keyup", function() {
-    inputValue.value = editorValue.innerHTML;
   });
 </script>
 @if(session("pesan") == "tambah")

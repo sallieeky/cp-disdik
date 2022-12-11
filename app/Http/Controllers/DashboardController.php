@@ -12,7 +12,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view("dashboard.beranda", compact("berita"));
+        return view("dashboard.beranda");
     }
     public function umum()
     {
@@ -68,34 +68,71 @@ class DashboardController extends Controller
         }
         return back()->with("pesan", "ubah");
     }
-    // public function sliderTambah(Request $request)
-    // {
-    //     $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
-    //     $request["user_id"] = Auth::user()->id;
-    //     Slider::create($request->all());
-    //     $request->file("file_gambar")->storeAs("public/hero", $request["gambar"]);
-    //     return back()->with("pesan", "tambah");
-    // }
-    // public function sliderUbah(Request $request)
-    // {
-    //     if ($request->file("file_gambar")) {
-    //         $request["gambar"] = $request->file("file_gambar")->getClientOriginalName();
-    //         $request->file("file_gambar")->storeAs("public/hero", $request["gambar"]);
-    //     }
-    //     $request["user_id"] = Auth::user()->id;
-    //     Slider::where("id", $request->id)
-    //         ->update([
-    //             "user_id" => $request->user_id,
-    //             "gambar" => $request->gambar,
-    //             "judul" => $request->judul
-    //         ]);
-    //     return back()->with("pesan", "ubah");
-    // }
-    // public function sliderHapus(Request $request)
-    // {
-    //     Slider::find($request->id)->delete();
-    //     return back()->with("pesan", "hapus");
-    // }
+
+    public function kontak()
+    {
+        $kontak = Umum::whereIn("nama", ["alamat", "telepon", "email", "instagram", "facebook"])->get()->pluck("nilai", "nama");
+        return view("dashboard.kontak", compact("kontak"));
+    }
+
+    public function kontakUbah(Request $request)
+    {
+        // cek apakah ada Alamat, Telepon, Email, Instagram, Facebook
+        $data = Umum::whereIn("nama", ["Alamat", "Telepon", "Email", "Instagram", "Facebook"])->get();
+        if ($data) {
+            try {
+                Umum::where("nama", "Alamat")->update([
+                    "nilai" => $request->alamat,
+                    "user_id" => Auth::user()->id
+                ]);
+                Umum::where("nama", "Telepon")->update([
+                    "nilai" => $request->telepon,
+                    "user_id" => Auth::user()->id
+                ]);
+                Umum::where("nama", "Email")->update([
+                    "nilai" => $request->email,
+                    "user_id" => Auth::user()->id
+                ]);
+                Umum::where("nama", "Instagram")->update([
+                    "nilai" => $request->instagram,
+                    "user_id" => Auth::user()->id
+                ]);
+                Umum::where("nama", "Facebook")->update([
+                    "nilai" => $request->facebook,
+                    "user_id" => Auth::user()->id
+                ]);
+            } catch (\Throwable $th) {
+                // 
+            }
+        } else {
+            Umum::create([
+                "nama" => "Alamat",
+                "nilai" => $request->alamat,
+                "user_id" => Auth::user()->id
+            ]);
+            Umum::create([
+                "nama" => "Telepon",
+                "nilai" => $request->telepon,
+                "user_id" => Auth::user()->id
+            ]);
+            Umum::create([
+                "nama" => "Email",
+                "nilai" => $request->email,
+                "user_id" => Auth::user()->id
+            ]);
+            Umum::create([
+                "nama" => "Instagram",
+                "nilai" => $request->instagram,
+                "user_id" => Auth::user()->id
+            ]);
+            Umum::create([
+                "nama" => "Facebook",
+                "nilai" => $request->facebook,
+                "user_id" => Auth::user()->id
+            ]);
+        }
+        return back()->with("pesan", "ubah");
+    }
 
     public function login()
     {
