@@ -149,6 +149,11 @@ class DashboardController extends Controller
             return back()->with("pesan", "Username atau password salah");
         }
     }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect("/login");
+    }
 
     public function kelolaHalaman()
     {

@@ -154,7 +154,7 @@
                     <div class="nav-right col pull-right right-menu p-0">
                         <ul class="nav-menus">
                             <li class="onhover-dropdown p-0">
-                                <a class="btn btn-primary-light" href="/template-dashboard/theme/login_two.html"><i data-feather="log-out"></i>Logout</a>
+                                <a class="btn btn-primary-light" href="/logout"><i data-feather="log-out"></i>Logout</a>
                             </li>
                         </ul>
                     </div>

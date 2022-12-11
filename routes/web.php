@@ -41,6 +41,7 @@ Route::get('/kontak-kami', [LandingController::class, 'kontak']);
 
 Route::get('/login', [DashboardController::class, 'login'])->middleware("guest")->name("login");
 Route::post('/login', [DashboardController::class, 'loginPost']);
+Route::post('/logout', [DashboardController::class, 'logout']);
 
 // DASHBOARD
 Route::prefix('dashboard')->middleware(["auth"])->group(function () {
