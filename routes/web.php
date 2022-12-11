@@ -94,7 +94,6 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::get('/kelola-halaman/ppid', [PpidController::class, 'index']);
   Route::post('/kelola-halaman/ppid/ubah/{nama}', [PpidController::class, 'ubah']);
 
-
   Route::get('/kelola-halaman/penghargaan', [PenghargaanController::class, 'index']);
   Route::post('/kelola-halaman/penghargaan/tambah', [PenghargaanController::class, 'tambahPenghargaan']);
   Route::post('/kelola-halaman/penghargaan/ubah', [PenghargaanController::class, 'ubahPenghargaan']);
@@ -104,29 +103,6 @@ Route::prefix('dashboard')->middleware(["auth"])->group(function () {
   Route::post('/kelola-halaman/anggaran/tambah', [AnggaranController::class, 'tambahAnggaran']);
   Route::post('/kelola-halaman/anggaran/ubah', [AnggaranController::class, 'ubahAnggaran']);
   Route::post('/kelola-halaman/anggaran/hapus', [AnggaranController::class, 'hapusAnggaran']);
-
-
-  // Route::prefix('kelola-halaman')->group(function () {
-  //   Route::get('/', [DashboardController::class, 'kelolaHalaman']);
-  //   Route::get('/beranda', [BerandaController::class, 'index']);
-
-  //   Route::get('/profil', [ProfilController::class, 'index']);
-  //   Route::post('/profil/deskripsi/ubah', [ProfilController::class, 'deskripsiUbah']);
-  //   Route::post('/profil/riwayat-profil/tambah', [ProfilController::class, 'riwayatProfilTambah']);
-  //   Route::post('/profil/riwayat-profil/ubah', [ProfilController::class, 'riwayatProfilUbah']);
-  //   Route::post('/profil/riwayat-profil/hapus', [ProfilController::class, 'riwayatProfilHapus']);
-
-  //   Route::get('/visi-misi-dan-tujuan', [TentangKamiController::class, 'visiMisiDanTujuan']);
-  //   Route::get('/struktur-organisasi', [TentangKamiController::class, 'strukturOrganisasi']);
-  //   Route::get('/tugas-dan-fungsi', [TentangKamiController::class, 'tugasDanFungsi']);
-  //   Route::get('/rencana-strategis', [TentangKamiController::class, 'rencanaStrategis']);
-
-
-
-  //   Route::get('/regulasi', [RegulasiController::class, 'index']);
-  //   Route::get('/ppid', [PpidController::class, 'index']);
-  //   Route::get('/penghargaan', [PenghargaanController::class, 'index']);
-  // });
 
   // Route::get('/tes', function () {
   //   return view("tes");

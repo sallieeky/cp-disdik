@@ -21,7 +21,7 @@ class UmumSeeder extends Seeder
         ]);
         Umum::create([
             "nama" => "pengunjung",
-            "nilai" => 0,
+            "nilai" => 1,
             "user_id" => 1
         ]);
         Umum::create([

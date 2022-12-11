@@ -39,8 +39,8 @@
               <p class="lead">
                   Email: <a href="mailto:{{ $kontak["Email"] }}">{{ $kontak["Email"] }}</a><br>
                   Telepon: {{ $kontak["Telepon"] }}<br>
-                  Instagram: <a href="{{ $kontak["Instagram"] }}">{{ $kontak["Instagram"] }}</a><br>
-                  Facebook: <a href="{{ $kontak["Facebook"] }}">{{ $kontak["Facebook"] }}</a><br>
+                  Instagram: <a href="{{ $kontak["Instagram"] }}">{{ $kontak["Instagram"] }}</a>@if($kontak["Instagram"] == null) - @endif<br>
+                  Facebook: <a href="{{ $kontak["Facebook"] }}">{{ $kontak["Facebook"] }}</a>@if($kontak["Facebook"] == null) - @endif<br>
               </p>
               <p class="lead">
                   Kami buka tiap senin sampai jum'at dari jam 09.00 WITA &mdash; 16.00 WITA.

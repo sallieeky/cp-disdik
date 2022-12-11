@@ -12,7 +12,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view("dashboard.beranda");
+        $halaman = Halaman::all();
+        $pengunjung = Umum::where("nama", "pengunjung")->get()->count();
+        $informasi = Informasi::all()->count();
+        return view("dashboard.beranda", compact("halaman", "pengunjung", "informasi"));
     }
     public function umum()
     {
