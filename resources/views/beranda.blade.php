@@ -104,7 +104,7 @@
                             </div>
                         @endif
                         @foreach ($pengumuman as $dt)
-                        <div class="col-md-3 col-12">
+                        <div class="col-md-4 col-12">
                             <div class="feature feature-1">
                                 <div class="feature__body boxed boxed--border p-3">
                                     <h5><a href="/informasi/detail/{{ $dt->id }}" class="text-primary">{{ $dt->judul }}</a></h5>
@@ -124,7 +124,7 @@
                         </div>
                         @endforeach
                     </div>
-                    @if(count($berita) > 0)
+                    @if(count($pengumuman) > 0)
                     <div class="text-center mt-5">
                         <a class="btn btn--primary type--uppercase" href="/pengumuman">
                             <span class="btn__text">
@@ -143,13 +143,18 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-8">
-                    <h2 class="m-0">Layanan Lainnya</h2>
-                    <p class="lead">
-                        layanan-layanan yang berhubungan dengan Dinas Pendidikan Kota Balikpapan.
-                    </p>
+                    <h2 class="text-center"><strong>Layanan <span class="text-primary">Lainnya</span></strong></h2>
                 </div>
             </div>
             <div class="row justify-content-center mt-3">
+                {{-- buat kalau kosong --}}
+                @if (count($layananlainnya) == 0)
+                    <div class="col-md-12">
+                        <div class="alert alert-warning">
+                            <strong>Tidak ada layanan lainnya.</strong> 
+                        </div>
+                    </div>
+                @endif
                 @foreach ($layananlainnya as $dt)
                 <a href="{{ $dt->url }}" target="_blank">
                     <img src="/storage/external-link/{{ $dt->gambar }}" alt="{{ $dt->url }}" class="img" width="200">

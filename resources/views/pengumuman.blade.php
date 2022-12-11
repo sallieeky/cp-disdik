@@ -107,7 +107,7 @@
                         @foreach ($terbaru as $dt)
                         <h6 class="py-0 my-0 text-decoration-none"><a href="/informasi/detail/{{ $dt->id }}">{{ $dt->judul }}</a></h6>
                         <p>
-                          {{ str_replace('<br />', ' ', $dt->deskripsi) }}
+                          {{ substr(str_replace('<br />', ' ', $dt->deskripsi),0, 50) }}
                         </p>
                         @endforeach
                     </div>
